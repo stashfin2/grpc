@@ -7,10 +7,10 @@
 package stashfin_com
 
 import (
+	aa "github.com/stashfin2/grpc/stashfin.com/banking/aa"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
-	aa "stashfin.com/banking/aa"
 )
 
 const (

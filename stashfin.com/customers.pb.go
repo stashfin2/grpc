@@ -7,17 +7,17 @@
 package stashfin_com
 
 import (
+	customers "github.com/stashfin2/grpc/stashfin.com/customers"
+	aa "github.com/stashfin2/grpc/stashfin.com/customers/aa"
+	cb "github.com/stashfin2/grpc/stashfin.com/customers/cb"
+	enach "github.com/stashfin2/grpc/stashfin.com/customers/enach"
+	freedom "github.com/stashfin2/grpc/stashfin.com/customers/freedom"
+	lamf "github.com/stashfin2/grpc/stashfin.com/customers/lamf"
+	pd "github.com/stashfin2/grpc/stashfin.com/customers/pd"
+	rpd "github.com/stashfin2/grpc/stashfin.com/customers/rpd"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
-	customers "stashfin.com/customers"
-	aa "stashfin.com/customers/aa"
-	cb "stashfin.com/customers/cb"
-	enach "stashfin.com/customers/enach"
-	freedom "stashfin.com/customers/freedom"
-	lamf "stashfin.com/customers/lamf"
-	pd "stashfin.com/customers/pd"
-	rpd "stashfin.com/customers/rpd"
 )
 
 const (

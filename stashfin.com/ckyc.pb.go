@@ -7,10 +7,10 @@
 package stashfin_com
 
 import (
+	ckyc "github.com/stashfin2/grpc/stashfin.com/ckyc"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
-	ckyc "stashfin.com/ckyc"
 )
 
 const (

@@ -8,10 +8,10 @@ package stashfin_com
 
 import (
 	context "context"
+	lamf "github.com/stashfin2/grpc/stashfin.com/lamf"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	lamf "stashfin.com/lamf"
 )
 
 // This is a compile-time assertion to ensure that this generated file

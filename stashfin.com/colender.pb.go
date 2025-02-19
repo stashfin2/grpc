@@ -7,10 +7,10 @@
 package stashfin_com
 
 import (
+	colender "github.com/stashfin2/grpc/stashfin.com/colender"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
-	colender "stashfin.com/colender"
 )
 
 const (

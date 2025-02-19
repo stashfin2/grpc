@@ -8,10 +8,10 @@ package stashfin_com
 
 import (
 	context "context"
+	ckyc "github.com/stashfin2/grpc/stashfin.com/ckyc"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	ckyc "stashfin.com/ckyc"
 )
 
 // This is a compile-time assertion to ensure that this generated file

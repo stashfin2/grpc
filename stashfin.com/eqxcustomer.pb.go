@@ -7,10 +7,10 @@
 package stashfin_com
 
 import (
+	eqxcustomers "github.com/stashfin2/grpc/stashfin.com/eqxcustomers"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
-	eqxcustomers "stashfin.com/eqxcustomers"
 )
 
 const (

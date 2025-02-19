@@ -7,10 +7,10 @@
 package stashfin_com
 
 import (
+	lamf "github.com/stashfin2/grpc/stashfin.com/lamf"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
-	lamf "stashfin.com/lamf"
 )
 
 const (

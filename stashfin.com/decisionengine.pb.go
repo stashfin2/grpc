@@ -7,10 +7,10 @@
 package stashfin_com
 
 import (
+	decisionengine "github.com/stashfin2/grpc/stashfin.com/decisionengine"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
-	decisionengine "stashfin.com/decisionengine"
 )
 
 const (

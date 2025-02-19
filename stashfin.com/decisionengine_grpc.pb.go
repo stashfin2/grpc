@@ -8,10 +8,10 @@ package stashfin_com
 
 import (
 	context "context"
+	decisionengine "github.com/stashfin2/grpc/stashfin.com/decisionengine"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	decisionengine "stashfin.com/decisionengine"
 )
 
 // This is a compile-time assertion to ensure that this generated file

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the base Go module path
-BASE_PACKAGE="stashfin.com"
+BASE_PACKAGE="github.com/stashfin2/grpc/stashfin.com"
 
 # Define the proto directory
 PROTO_DIR="protos"

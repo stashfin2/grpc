@@ -7,10 +7,10 @@
 package stashfin_com
 
 import (
+	kyc "github.com/stashfin2/grpc/stashfin.com/kyc"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
-	kyc "stashfin.com/kyc"
 )
 
 const (

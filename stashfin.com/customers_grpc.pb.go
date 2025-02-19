@@ -8,17 +8,17 @@ package stashfin_com
 
 import (
 	context "context"
+	customers "github.com/stashfin2/grpc/stashfin.com/customers"
+	aa "github.com/stashfin2/grpc/stashfin.com/customers/aa"
+	cb "github.com/stashfin2/grpc/stashfin.com/customers/cb"
+	enach "github.com/stashfin2/grpc/stashfin.com/customers/enach"
+	freedom "github.com/stashfin2/grpc/stashfin.com/customers/freedom"
+	lamf "github.com/stashfin2/grpc/stashfin.com/customers/lamf"
+	pd "github.com/stashfin2/grpc/stashfin.com/customers/pd"
+	rpd "github.com/stashfin2/grpc/stashfin.com/customers/rpd"
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	customers "stashfin.com/customers"
-	aa "stashfin.com/customers/aa"
-	cb "stashfin.com/customers/cb"
-	enach "stashfin.com/customers/enach"
-	freedom "stashfin.com/customers/freedom"
-	lamf "stashfin.com/customers/lamf"
-	pd "stashfin.com/customers/pd"
-	rpd "stashfin.com/customers/rpd"
 )
 
 // This is a compile-time assertion to ensure that this generated file
