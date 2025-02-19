@@ -1,0 +1,14 @@
+syntax="proto3";
+
+package loans.refund;
+
+message refundRequest {
+   int32 amount = 1;
+   int32 customerid = 2;
+   int32 loan_id = 3;
+   string mode = 4;
+ }
+ 
+message refundResponse {
+   string message = 1;
+}

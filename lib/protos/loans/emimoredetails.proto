@@ -1,0 +1,20 @@
+
+syntax="proto3";
+
+package loans.emimoredetails;
+
+message emiMoreDetailsRequest { 
+  string date = 1;
+}
+ 
+message  emiMoreDetailsResponse {
+   repeated Field data =1;
+  message Field { 
+    string loan_number =1;
+    int32 emi_amount = 2;
+    int32 loan_amount =3;
+    string start_date = 4;
+    string close_date = 5;
+    int32 loan_id = 6;
+  }
+}

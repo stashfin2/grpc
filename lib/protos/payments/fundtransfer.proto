@@ -1,0 +1,33 @@
+syntax="proto3";
+package payments.fundtransfer;
+
+message request{
+    int32 customer_id = 1;
+    string client_id = 2;
+    string external_order_id = 3;
+    double amount = 4;
+    message bank_details {
+        string account_no = 1;
+        string ifsc = 2;
+        string name = 3;
+        string email = 4;
+        string phone = 5;
+    };
+    string transfer_source = 5;
+    string transfer_account_id = 6;
+    repeated bank_details customer_bank_details = 7;
+    optional string loan_id = 8;
+    string mode = 9;
+    optional string transfer_destination = 10;
+}
+
+
+message response{
+    string status = 1;
+    int32 status_code = 2;
+    int32 customer_id = 3;
+    string external_order_id = 4;
+    double amount = 5;
+    optional string message = 6;
+    optional string txn_date = 7;
+}

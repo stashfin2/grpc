@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package customers.applyclijourney;
+
+message applyCliJourneyRequest {
+}
+
+message applyCliJourneyResponse {
+  string status = 1;
+}

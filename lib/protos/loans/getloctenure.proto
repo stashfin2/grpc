@@ -1,0 +1,27 @@
+syntax="proto3";
+
+package loans.getloctenure;
+
+message GetLocTenureRequest {
+    int32 amount = 1;
+}
+ 
+message TenureDetail {
+  int32 tenure = 1;
+  double expected_emi_amount = 2;
+}
+
+message GetLocTenureResponse {
+  int32 amount = 1;
+  string bill_date = 2;
+  int32 min_tenure = 3;
+  int32 max_tenure = 4;
+  optional string msg = 5;
+  string first_emi_date = 6;
+  string fcp_fee = 7;
+  int32 fcp_interest = 8;
+  repeated TenureDetail tenure_details = 9;
+  bool is_fip = 10;
+  int32 amount_grossup = 11;
+}
+

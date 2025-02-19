@@ -1,0 +1,25 @@
+syntax="proto3";
+
+package loans.amortization;
+
+message amortizationRequest {
+    int32 loan_id = 1;
+ }
+ 
+message amortizationResponse {
+       repeated Field installments =1;
+       message Field {
+            int32 loan_id = 1;
+            int32 customer_id = 2;
+            int32 seq_no = 3;
+            int32 amount = 4;
+            int32 starting_balance = 5;
+            int32 ending_balance = 6;
+            int32 principal = 7;
+            int32 interest = 8;
+            string due_date = 9;
+            string status = 10;
+            int32 discount = 11;
+            int32 penalty  = 12;
+        }
+    }

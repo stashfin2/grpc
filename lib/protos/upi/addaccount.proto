@@ -1,0 +1,25 @@
+syntax="proto3";
+package upi.addAccount;
+
+message addAccountRequest{
+     string acc_number = 1;
+    string acc_ref_number = 2;
+    string acc_type = 3;
+    string acc_name = 4;
+    optional string aeba = 5;
+    optional string mbeba = 6;
+    string ifsc = 7;
+    optional string vpa = 8;
+    optional string mmid = 9;
+    string default_credit = 10;
+    string default_debit = 11;
+    string status = 12;
+    optional string is_primary = 13;
+    optional string is_active = 14;
+    string profile_id = 15;
+}
+
+message addAccountResponse{
+    string acc_number = 1;
+    string message = 2;
+}

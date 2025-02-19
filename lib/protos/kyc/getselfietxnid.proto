@@ -1,0 +1,13 @@
+syntax="proto3";
+
+package kyc.getselfietxnid;
+
+message selfieTxnIdRequest {
+  string txn_id = 1;
+}
+
+message selfieTxnIdResponse {
+  string txn_id = 1;
+  string selfie_url = 2;
+
+}

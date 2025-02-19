@@ -1,0 +1,24 @@
+syntax="proto3";
+package upi.listBlockedVPA;
+
+message listBlockedVPARequest{
+    optional string block_type = 1;
+    optional string block_value = 2;
+}
+
+message BlockedList{
+    string block_type = 1;
+    string block_value = 2;
+    string reason = 3;
+    string blocked_since = 4;
+}
+
+message Data{
+    repeated BlockedList blocked_list = 1;
+} 
+message listBlockedVPAResponse{
+    string status= 1;
+    string message = 2;
+    optional Data data = 3;
+
+}

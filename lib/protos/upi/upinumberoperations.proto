@@ -1,0 +1,23 @@
+syntax="proto3";
+package upi.upiNumberOperations;
+
+message upiNumberOperationsRequest{
+    string vpa = 1;
+    string upi_number = 2;
+    string operation = 3;
+    string profile_id = 4;
+    string device_id = 5;
+    string mobile = 6;
+    string user_consent = 7;
+}
+
+message Data {
+   string upi_number = 1;
+   optional string upi_number_status= 2;
+
+}
+message upiNumberOperationsResponse{
+    string status = 1;
+    string message = 2;
+    optional Data data = 3;
+}

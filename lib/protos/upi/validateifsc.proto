@@ -1,0 +1,33 @@
+syntax="proto3";
+package upi.validateIFSC;
+
+message validateIFSCRequest{
+    string ifsc = 1;
+}
+
+message BankData {
+  optional string MICR = 1;
+  optional string BRANCH = 2;
+  optional string ADDRESS = 3;
+  optional string STATE = 4;
+  optional string CONTACT = 5;
+  optional bool UPI = 6;
+  optional bool RTGS = 7;
+  optional string CITY = 8;
+  optional string CENTRE = 9;
+  optional string DISTRICT = 10;
+  optional bool NEFT = 11;
+  optional bool IMPS = 12;
+  optional string SWIFT = 13;
+  optional string ISO3166 = 14;
+  optional string BANK = 15;
+  optional string BANKCODE = 16;
+  optional string IFSC = 17;
+} 
+
+
+message validateIFSCResponse{
+  string status = 1;
+  string message = 2;
+  optional BankData data = 3;
+}

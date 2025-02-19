@@ -1,0 +1,12 @@
+syntax="proto3";
+
+package customers.restoreaccount;
+
+message restoreAccountRequest {  
+    string mobile = 1 ;
+    string deleted_token = 2 ; 
+}
+
+message restoreAccountResponse {
+    string jwttoken = 1 ;
+}

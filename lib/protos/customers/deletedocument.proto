@@ -1,0 +1,11 @@
+syntax="proto3";    
+
+package customers.deletedocument;
+
+message deleteDocumentRequest {
+    string doc_name = 1;
+}
+
+message deleteDocumentResponse {
+    bool status = 1;    
+}

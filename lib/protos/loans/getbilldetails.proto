@@ -1,0 +1,21 @@
+syntax="proto3";
+
+package loans.getbilldetails;
+
+message getBillDetailsRequest { 
+}
+ 
+message  getBillDetailsResponse {
+      repeated Field data =1;
+       message Field { 
+        int32 bill_amount = 1;
+        string bill_date = 2;
+        int32 principal =3;
+        int32 interest =4;
+        int32 inst_id = 5;
+        int32 penalty = 6;
+        bool is_visible = 7;
+        int32 loan_id = 8;
+        bool is_payable = 9;
+       }
+}

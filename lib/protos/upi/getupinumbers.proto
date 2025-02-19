@@ -1,0 +1,24 @@
+syntax="proto3";
+package upi.getUpiNumbers;
+
+message getUpiNumbersRequest{
+}
+
+message upiNumbersList {
+  optional string upi_number = 1;
+  optional string is_primary = 2;
+  optional string is_deleted = 3;
+  optional string status = 4;
+}
+
+message Data {
+  repeated upiNumbersList upinumbers = 1;
+  optional string vpa = 2;
+}
+
+
+message getUpiNumbersResponse{
+  string status = 1;
+  string message = 2;
+  optional Data data = 3;
+}

@@ -1,0 +1,49 @@
+syntax="proto3";
+
+package documents.getfinancialdoc;
+
+message financialdocrequest {
+  int32 customer_id=1;
+  string approved_date=2;
+  int32 tenure=3;
+  double processing_fees=4;
+  double credit_report_fees=5;
+  double insurance_fees=6;
+  double disbured_amount=7;
+  double sanctioned_amount=8;
+  double apr_value=9;
+  double roi=10;
+  double txn_fees=11;
+  double txn_fees_gst=12;
+  double txn_rate=13;
+  double processing_fees_rate=14;
+  double processing_fees_gst=15;
+  string emi_start_date=16;
+  repeated Field installments =17;
+    message Field {
+        int32 customer_id = 1;
+        int32 seq_no = 2;
+        int32 amount = 3;
+        int32 starting_balance = 4;
+        int32 ending_balance = 5;
+        int32 principal = 6;
+        int32 interest = 7;
+        string due_date = 8;
+        string status = 9;
+        int32 discount = 10;
+        int32 penalty  = 11;
+    }
+}
+
+message agreementdata{
+ string financial_doc_url=1;
+ string sanction_latter_url=2;
+}
+
+
+message financialdocresponse {
+  string status = 1;
+  int32 statusCode = 2;
+  agreementdata data = 3;
+  string message = 4;
+}

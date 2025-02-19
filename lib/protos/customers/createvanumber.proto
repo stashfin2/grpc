@@ -1,0 +1,11 @@
+syntax="proto3";
+
+package customers.createvanumber;
+
+message createVaNumberRequest {
+   
+}
+
+message createVaNumberResponse {
+    string va_number = 1;
+}

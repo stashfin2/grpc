@@ -1,0 +1,11 @@
+syntax="proto3";
+
+package customers.cb.morecsimprove;
+
+message moreCsImproveRequest {
+   string step_name = 1;
+}
+
+message moreCsImproveResponse {
+    string message = 1;
+}

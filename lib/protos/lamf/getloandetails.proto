@@ -1,0 +1,24 @@
+syntax="proto3";
+package lamf.getloandetails;
+
+message request{
+    int32 customer_id = 1;
+    string reqId = 2;
+    string clientRefNo = 3;
+}
+
+message response{
+    optional int32 statusCode = 1;
+    optional double totatInvestedAmount = 2;
+    optional double totalCurrentMarketValue = 3;
+    optional double maxLoanAmount = 4;
+    message Errors {
+        optional int32 code = 1;
+        optional string message =2;
+    };
+    message Data {
+        optional string reqId = 1;
+        repeated Errors errors = 2;
+    };
+    optional Data data = 5;
+}

@@ -1,0 +1,26 @@
+syntax="proto3";
+package upi.getmandatehistory;
+
+message getMandateHistoryRequest{
+  string umn = 1;
+}
+
+message MandateTxnDetails{
+    string payee_name =1;
+    string payee_vpa = 2;
+    string umn = 3;
+    float amount = 4;
+    string txn_date = 5;
+    string rrn = 8;
+    string status = 9;
+}
+
+message Data{
+    repeated MandateTxnDetails mandateTxnDetails  = 1;
+}
+
+message getMandateHistoryResponse{
+    string status  = 1;
+    string message = 2;
+    optional Data data = 3;
+}

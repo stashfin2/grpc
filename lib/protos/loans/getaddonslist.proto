@@ -1,0 +1,17 @@
+syntax="proto3";
+
+package loans.getaddonslist;
+
+message getAddonsListRequest {
+    int32 requested_amount = 1;
+ }
+ 
+message getAddonsListResponse {
+       repeated Field addonsList =1;
+       message Field {
+            string name = 1;
+            float amount = 2;
+            int32 plan_id = 3;
+            float discount = 4;
+        }
+    }

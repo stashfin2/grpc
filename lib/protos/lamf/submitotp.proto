@@ -1,0 +1,23 @@
+syntax="proto3";
+package lamf.submitotp;
+
+message request{
+  int32 customer_id = 1;
+  string otp = 2;
+  string reqId = 3;
+  string otpRef = 4;
+  string clientRefNo = 5;
+}
+
+message response {
+     message Errors{
+        optional int32 code = 1;
+        optional string message = 2;
+    };
+    message Data {
+        optional string reqId = 1;
+        repeated Errors errors = 2;
+    };
+    optional int32 statusCode = 1;
+    optional Data data = 2;
+}

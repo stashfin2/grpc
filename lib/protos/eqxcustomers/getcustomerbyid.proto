@@ -1,0 +1,19 @@
+syntax="proto3";
+
+package eqxcustomers.getcustomerbyid;
+
+message getCustomerByIdRequest {  
+}
+ 
+message getCustomerByIdResponse {
+    int32 id = 1;
+    string mobile = 2;
+    string status = 3;
+    int32 biometric_state = 4;
+    optional string vpa = 5;
+    optional string first_name = 6;
+    optional string last_name = 7;
+    optional string email = 8;
+    optional string token = 9;
+    optional string refferal_code = 10;  
+}

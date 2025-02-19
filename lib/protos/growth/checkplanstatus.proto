@@ -1,0 +1,17 @@
+syntax="proto3";
+
+package growth.checkplanstatus;
+
+message chrplansstatusrequest {}
+
+
+message planstatus{
+  bool planStatus = 1;
+}
+
+message chrplanstatusresponse {
+  string status = 1;
+  int32 statusCode = 2;
+  planstatus data = 3;
+  string message = 4;
+}

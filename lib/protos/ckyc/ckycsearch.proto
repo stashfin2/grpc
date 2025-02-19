@@ -1,0 +1,38 @@
+syntax="proto3";
+
+package ckyc.ckycsearch;
+
+message CkycSearchRequest {
+  string pan_no = 1;
+  int32 customer_id = 2;
+}
+
+message CKYCData {
+  int32 customer_id = 1;
+  optional string request_id = 2; 
+  optional string request_status = 3; 
+  optional string transaction_id = 4;
+  optional string transaction_status = 5;
+  optional string ckyc_available = 6;
+  optional string ckyc_account_number = 7;
+  optional string ckyc_id = 8;
+  optional string ckyc_age = 9;
+  optional string ckyc_father_name = 10;
+  optional string ckyc_gen_date = 11;
+  optional string ckyc_name = 12;
+  optional string ckyc_request_date = 13;
+  optional string ckyc_update_date = 14;
+  optional string ckyc_availableid_type = 15;
+  optional string ckyc_availableid_type_status = 16;
+            string create_date = 17;
+  optional string kycphoto = 18;
+  optional string kycphototype = 19;
+  optional string ckyc_reference_id = 20;
+  optional string transaction_rejection_status = 21;
+}
+
+message CkycSearchResponse {
+  string message = 1;
+  string status = 2;
+  CKYCData data = 3;
+}

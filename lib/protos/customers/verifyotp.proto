@@ -1,0 +1,20 @@
+syntax="proto3";
+
+package customers.verifyotp;
+
+message verifyOtpReqeust {
+   string mobile = 1;
+    string device_id = 2; 
+   string otp = 3 ; 
+   string token = 4;
+   bool tnc = 5 ;
+   bool is_rooted = 6;
+}
+
+message verifyOtpResponse { 
+   string category = 1 ;
+   bool ismpin = 2 ;
+   string jwttoken = 3 ; 
+   string is_deleted_token = 4;
+   string customer_name = 5;
+}

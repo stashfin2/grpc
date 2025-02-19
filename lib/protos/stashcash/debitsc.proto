@@ -1,0 +1,27 @@
+syntax="proto3";
+
+package stashcash.debitsc;
+
+message request {
+  int64 customer_id = 1;
+  int32 flag = 2;
+  int64 campaign_id = 3;
+  optional float amount = 4;
+  optional string sc_type = 5;
+  optional string txn_id = 6;
+}
+
+message response {
+   string status = 1;
+   message Data {
+    optional float locked = 1;
+    optional float unlocked = 2;
+    optional float balance = 3;
+    optional float rupee_balance = 4; 
+    string txn_id = 5;
+    optional int32 conversion_factor = 6;
+    string txn_status = 7;
+    optional float txn_sc = 8;
+   }
+   optional Data data = 2;
+}

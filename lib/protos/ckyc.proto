@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package  service; 
+
+import "ckyc/ckycsearch.proto";
+import "ckyc/ckycdownload.proto";
+
+service ckyc {
+  rpc ckycSearch(.ckyc.ckycsearch.CkycSearchRequest) returns (.ckyc.ckycsearch.CkycSearchResponse) {} 
+  rpc ckycDownload(.ckyc.ckycdownload.CkycDownloadRequest) returns (.ckyc.ckycdownload.CkycDownloadResponse) {} 
+}

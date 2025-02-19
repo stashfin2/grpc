@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package customers.bulksms;
+
+message SMSRecord {
+  string contact = 1;
+  string message = 2;
+  string received_at = 3;
+}
+
+message bulkSMSRequest {
+  repeated SMSRecord sms_records = 1;
+}
+
+message bulkSMSResponse {
+  string status = 1;
+}

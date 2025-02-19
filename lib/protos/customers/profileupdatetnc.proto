@@ -1,0 +1,11 @@
+syntax="proto3";
+
+package customers.profileupdatetnc;
+
+message updateTncRequest { 
+    string tnc_version = 1 ; 
+}
+
+message updateTncResponse {
+    bool status = 1;
+}

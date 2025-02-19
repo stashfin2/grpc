@@ -1,0 +1,60 @@
+
+syntax="proto3";
+
+package loans.getsummarystaticfields;
+
+message getSummaryStaticFieldsRequest { }
+ 
+message  getSummaryStaticFieldsResponse {
+  string emi_date_l =1;
+  string emi_amount_l =2;
+  string first_emi_date_l = 3;
+  string final_disbursal_amount_l =4;
+  string upfront_interest_l =5;
+  string processing_fees_l =6;
+  string gst_l =7;
+  string rate_of_interest_l = 8;
+  string early_foreclosure_fees_l = 9;
+  string convenience_fees_l =10;
+  string total_interest_pay_l = 11;
+  string effective_annual_rate_l = 12;
+  string trans_fee_plus_gst_l = 13;
+  string processing_fee_plus_gst_l =14;
+  string max_amount_l = 15;
+  string credit_report_fees_l = 16;
+  string fee_and_charges_l =17;
+  string add_on_l =18;
+  string total_loan_amount_l =19;
+  string loan_amount_l = 20;
+  string disbursed_amount_l =21;
+  string total_payable_amount_l =22;
+  string disbursal_amount_l = 23;
+  string number_of_emi_l =24;
+  string first_emi_amt_l =25;
+  string subsequent_emi_l =26;
+  string effective_roi_l =27;
+  string effective_annual_roi_l =28;
+  string insurance_l =29;
+  string apr_title =30;
+  repeated Field insurance_desc =31;
+   message Field {
+        string title = 1;
+        string desc = 2;
+        string icon = 3; 
+    }
+  string insurance_title =32;
+  string upfront_interest_description =33;
+  string bill_amount_l =34;
+  repeated CreditSection credit_section =35;
+  message CreditSection {
+    string title = 1;
+    string description = 2;
+    string icon = 3;
+  }
+  BrokenPeriod broken_period =36;
+    message BrokenPeriod {
+        string title = 1;
+        string description = 2;
+    }
+  string insaurance_tnc_url = 37;
+}

@@ -1,0 +1,28 @@
+syntax="proto3";
+package upi.validateVPA;
+
+message validateVPARequest{
+    string mobile = 1;
+    string device_id = 2;
+    string profile_id = 3;
+    string vpa = 4;
+    optional string validate_type = 5;
+    optional string ifsc = 6;
+}
+
+message validateVPAResponse{
+  optional string vpa = 1;
+  optional VpaData vpaData = 2;
+}
+
+message VpaData {
+  optional string maskName = 1;
+  optional string type = 2;
+  optional string code = 3;
+  optional string mid = 4;
+  optional string sid = 5;
+  optional string tid = 6;
+  optional string merchantGenre = 7;
+  optional string onBoardingType = 8;
+  optional bool verifiedMerchant = 9;
+}

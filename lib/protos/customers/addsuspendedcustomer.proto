@@ -1,0 +1,12 @@
+syntax="proto3";
+
+package customers.addsuspendedcustomer;
+
+message addSuspendedCustomerRequest {
+  string mobile = 1;
+  string email = 2;
+}
+
+message addSuspendedCustomerResponse {
+  bool success = 1;
+}

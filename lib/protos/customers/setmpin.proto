@@ -1,0 +1,12 @@
+syntax="proto3";
+
+package customers.setmpin;
+
+message setMpinRequest { 
+  string mobile = 1 ;
+  int32 mpin = 2;
+}
+
+message setMpinResponse {
+   bool status = 1 ; 
+}

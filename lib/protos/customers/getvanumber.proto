@@ -1,0 +1,11 @@
+syntax="proto3";
+
+package customers.getvanumber;
+
+message getVaNumberRequest { 
+    int32 customer_id = 1;
+}
+
+message getVaNumberResponse {
+    string va_number = 1;
+}

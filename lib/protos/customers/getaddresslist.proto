@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package customers.getaddresslist;
+
+
+message getAddressRequest {
+} 
+
+message getAddressResponse {
+    string residential_address = 1; 
+    string permanent_address = 2;  
+    string office_address = 3;       
+}

@@ -1,0 +1,14 @@
+syntax="proto3";
+
+package customers.updatemobileverifyotp;
+
+message updateMobileVerifyOtpRequest {
+   string new_mobile = 1;    
+   string new_mobile_otp = 2;    
+}
+
+message updateMobileVerifyOtpResponse {
+  string status = 1; 
+
+}
+

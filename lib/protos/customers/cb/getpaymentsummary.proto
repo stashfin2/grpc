@@ -1,0 +1,18 @@
+syntax="proto3";
+
+package customers.cb.getpaymentsummary;
+
+message getPaymentSummaryRequest {
+ 
+}
+
+message  getPaymentSummaryResponse {
+  double builder_fee = 1;      
+  double gst = 2;            
+  double first_emi = 3;      
+  double brand_voucher = 4;    
+  double credit_report = 5;   
+  double total_amount = 6;   
+  map<string, string>terms_and_conditions = 7; 
+  string order_id = 8;
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package customers.lamf.verifylamfpledgeotp;
+
+
+message verifyLamfPledgeOtpRequest {
+  string otp = 1;
+}
+
+message verifyLamfPledgeOtpResponse {
+  string status = 1;  
+}

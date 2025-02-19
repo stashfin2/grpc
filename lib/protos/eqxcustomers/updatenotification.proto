@@ -1,0 +1,12 @@
+syntax="proto3";
+
+package eqxcustomers.updatenotification;
+
+message updateNotificationRequest { 
+   int64 notificationId = 1;
+}
+ 
+message updateNotificationResponse {
+    string status = 1;
+    string message = 2;
+}

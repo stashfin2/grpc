@@ -1,0 +1,13 @@
+syntax="proto3";
+
+package customers.pd.validatebankaccount;
+
+message validateBankAccountRequest {
+  string acc_number = 1;
+  string ifsc_code = 2;
+  string bank_name = 3;
+}
+
+message validateBankAccountResponse {
+  string status = 1;
+}

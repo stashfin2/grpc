@@ -1,0 +1,11 @@
+syntax="proto3";
+
+package customers.updatesanctionamount;
+
+message updateSanctionAmountRequest {
+    bool sanction_upgrade = 1;
+}
+
+message updateSanctionAmountResponse {
+   bool status = 1 ; 
+}

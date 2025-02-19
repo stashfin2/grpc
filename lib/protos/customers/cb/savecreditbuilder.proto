@@ -1,0 +1,13 @@
+
+syntax="proto3";
+
+package customers.cb.savecreditbuilder;
+
+message saveCreditBuilderRequest {
+  int32 amount = 1; 
+}
+
+
+message saveCreditBuilderResponse {
+  string success = 1;
+}

@@ -1,0 +1,14 @@
+syntax="proto3";
+
+package eqxcustomers.sendotp;
+
+message sendOtpRequest {
+   string mobile = 1; 
+   string device_id = 2;
+}
+
+message sendOtpResponse {
+   string token = 1; 
+   bool is_registered = 2;
+   string message = 3;
+}

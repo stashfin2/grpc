@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package eqxcustomers.getdashboardmaincard;
+
+message getDashboardMainCardRequest {}
+
+message getDashboardMainCardResponse {
+  string name = 1;
+  string code = 2; 
+  MainCardData block_data = 3;
+  string user_state = 4;
+}
+
+message MainCardData {
+  string text = 1;
+  string sub_text = 2;
+  string action_button_text = 3;
+  string action = 4;
+  string action_type = 5;
+  string comment = 6;
+  string landing_page = 7;
+  string timer = 8;
+  string image = 9;
+  bool show_button = 10;
+  string static_text = 11;
+}

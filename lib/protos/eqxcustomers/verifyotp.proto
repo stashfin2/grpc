@@ -1,0 +1,21 @@
+syntax="proto3";
+
+package eqxcustomers.verifyotp;
+
+message verifyOtpReqeust {
+   string mobile = 1;
+   string device_id = 2; 
+   string otp = 3 ; 
+   string token = 4;
+   bool tnc = 5 ;
+   bool is_rooted = 6;
+}
+
+message verifyOtpResponse { 
+   string auth_token = 1; 
+   optional string deleted_auth_token = 2;
+   optional string first_name =  3;
+   optional string last_name = 4;
+   string message = 5;
+   string refresh_token = 6;
+}
