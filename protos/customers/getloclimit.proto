@@ -1,0 +1,11 @@
+syntax = "proto3"; 
+
+package customers.getloclimit;
+
+message getLocLimitRequest {
+}
+
+message getLocLimitResponse {
+   float loc_limit = 1;
+   float max_loc_limit = 2;
+}

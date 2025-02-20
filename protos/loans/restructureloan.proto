@@ -1,0 +1,12 @@
+syntax="proto3";
+
+package loans.restructureloan;
+
+message restructureLoanRequest {
+   repeated int32 loan_id = 1;
+    int32 tenure = 2;
+ }
+ 
+message  restructureLoanResponse {
+ string message = 1; 
+}

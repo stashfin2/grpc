@@ -1,0 +1,10 @@
+syntax="proto3";
+
+package customers.getmessengermode;
+
+message getMessengerModeRequest {
+}
+ 
+message getMessengerModeResponse {
+  string mode = 1;
+}

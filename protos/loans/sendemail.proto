@@ -1,0 +1,11 @@
+syntax="proto3";
+
+package loans.sendemail;
+
+message sendEmailRequest { 
+   int32 loan_id =1;
+}
+ 
+message sendEmailResponse {
+   string agreement_email = 1;
+}

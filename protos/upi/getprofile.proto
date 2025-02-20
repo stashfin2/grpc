@@ -1,0 +1,82 @@
+syntax="proto3";
+package upi.getProfile;
+
+message getProfileRequest{
+    string mobile = 1;
+    string device_id = 2;
+    string profile_id = 3;
+}
+
+message getProfileResponse{
+  optional bool Success = 1;
+  optional string response = 2;
+  optional string ActCode = 3;
+  optional string message = 4;
+  optional string BankRRN = 5;
+  optional string UpiTranlogId = 6;
+  optional string UserProfile = 7;
+  optional MobileAppData mobileAppData = 8;
+  optional string SeqNo = 9;
+  optional string PayerRespCode = 10;
+  optional string PayeeRespCode = 11;
+  optional string PayerRevRespCode = 12;
+  optional string PayeeRevRespCode = 13;
+}
+
+message MobileAppData {
+  optional string merchantUser = 1;
+  optional string name = 2;
+  optional string mobile = 3;
+  optional Details details = 4;
+  optional string userType = 5;
+  optional string status = 6;
+}
+
+// Details nested message
+message Details {
+  repeated Account accounts = 1;
+}
+
+// Account nested message
+message Account {
+  optional string reg_mob_format = 1;
+  optional string default_va = 2;
+  optional string mmid = 3;
+  optional string global_start_date = 4;
+  optional string va = 5;
+  optional string default_debit = 6;
+  optional string global_end_date = 7;
+  optional string aadhar_otp = 8;
+  optional string merchant_genre = 9;
+  optional int32 acc_provider_id = 10;
+  optional string accRefNumber = 11;
+  optional string name = 12;
+  optional string allow_global_txn = 13;
+  optional string acc_provider_name = 14;
+  optional CredsAllowedList CredsAllowed = 15;
+  optional string ifsc = 16;
+  optional string accType = 17;
+  optional string default_credit = 18;
+  optional string account = 19;
+  optional string status = 20;
+  optional string onboarding_type = 21;
+  optional string upi_lite_lrn = 22;
+  optional string upi_lite_status = 23;
+  optional string channel_code = 24;
+  optional string mobile = 25;
+  optional string acc_identifier = 26;
+}
+
+// CredsAllowed nested message
+message CredsAllowedList {
+  repeated CredChild Child = 1;
+}
+
+// CredChild nested message
+message CredChild {
+  optional string CredsAllowedDLength = 1;
+  optional string CredsAllowedSubType = 2;
+  optional string CredsAllowedType = 3;
+  optional string dLength = 4;
+  optional string CredsAllowedDType = 5;
+}

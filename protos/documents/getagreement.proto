@@ -1,0 +1,19 @@
+syntax="proto3";
+
+package documents.getagreement;
+
+message documentrequest {
+  int32 loan_id =1;
+}
+
+message agreementdata{
+ string agreement_url=1;
+}
+
+
+message documentresponse {
+  string status = 1;
+  int32 statusCode = 2;
+  agreementdata data = 3;
+  string message = 4;
+}

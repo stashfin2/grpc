@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package customers.freedom.updateadditionalverification;
+
+
+message updateAdditionalVerificationRequest {
+}
+
+message updateAdditionalVerificationResponse {
+  string message = 1; 
+}

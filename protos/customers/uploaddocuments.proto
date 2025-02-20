@@ -1,0 +1,12 @@
+syntax="proto3";
+package customers.uploaddocuments;
+
+message uploadDocumentsRequest {
+  string title = 1;
+  string file = 2;  
+  string fileType = 3 ;
+}
+
+message uploadDocumentsResponse {
+  string status = 1;
+}

@@ -1,0 +1,21 @@
+syntax="proto3";
+
+package loans.updatecollectionview;
+
+message updateCollectionViewRequest { 
+  optional string status = 1;
+  optional string bounce_reason =2;
+  optional string ptp_date =3;
+  optional string agent_name =4;
+  optional string fos_agent=5;
+  optional int32 cl_lead_assign_id =6;
+  optional int32 level =7;
+  optional int32 assigned_level =8;
+  int32 customer_id =9;
+  
+}
+
+message updateCollectionViewResponse {
+  string status = 1;
+  int32 id = 2;
+}

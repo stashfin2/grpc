@@ -1,0 +1,82 @@
+syntax="proto3";
+package upi.getMandateDetails;
+
+message getMandatesDetailsRequest{
+    string txn_id = 1;
+    string umn = 2;
+}
+
+message getMandateDetailsReponse{
+    string status = 1;
+    string message = 2;
+    optional Data data = 3;
+}
+
+message Data {
+  optional PayeeDetails payee_details = 1;
+  optional PayerDetails payer_details = 2;
+  optional MandateDetails mandate_details = 3;
+  optional float amount = 4;
+  optional string payee_mobile = 5;
+  optional string status = 6;
+  optional string start_date = 7; 
+  optional string end_date = 8;   
+  optional string note = 9;
+  optional string txn_id = 10;
+  optional string umn = 11;
+  optional string expiry = 12;
+  optional int32 customer_id = 13;
+  optional string vpa = 14; // Virtual Payment Address
+}
+
+
+message PayeeDetails {
+  optional string Name = 1;
+  optional string Mobile = 2;
+  optional string VA = 3; // Virtual Address
+  optional string RespCode = 4;
+  optional string MccCode = 5;
+  optional string MccType = 6;
+  optional string AccountNo = 7;
+  optional string Ifsc = 8;
+  optional string RevRespCode = 9;
+  optional string VerifiedMerchant = 10;
+}
+
+message PayerDetails {
+  optional string Name = 1;
+  optional string Mobile = 2;
+  optional string VA = 3; // Virtual Address
+  optional string AccountNo = 4;
+  optional string Ifsc = 5;
+  optional string AccountType = 6;
+  optional string RespCode = 7;
+  optional string RevRespCode = 8;
+  optional string GstIncentiveApplicable = 9;
+}
+
+message MandateDetails {
+  optional string MandateName = 1;
+  optional string MandateType = 2;
+  optional string ValidityStart = 3; // Timestamp format
+  optional string ValidityEnd = 4;   // Timestamp format
+  optional string MandateAmount = 5;
+  optional string Frequency = 6;
+  optional string Revokeable = 7;
+  optional string DebitDay = 8;
+  optional string DebitRule = 9;
+  optional string AmountRule = 10;
+  optional string PurposeCode = 11;
+  optional string BlockFund = 12;
+  optional string UMN = 13;
+  optional string MandateNote = 14;
+  optional string MandateOriginalTxnId = 15;
+  optional string CreatedDate = 16; 
+  optional string RefUrl = 17;
+  optional string PauseStart = 18;
+  optional string PauseEnd = 19;
+  optional int32 TotalDebit = 20;
+  optional int32 SuccessfulDebit = 21;
+  optional int32 UnsuccessfulDebit = 22;
+  optional int32 RemainingDebit = 23;
+} 

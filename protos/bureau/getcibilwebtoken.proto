@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package bureau.getcibilwebtoken;
+
+message webTokenRequest {
+    int64 customer_id = 1;
+} 
+
+message webTokenResponse {
+    string status = 1;
+    optional Data data = 2;
+}
+
+message Data {
+    string message = 1;
+    string report_url = 2;
+    string web_token = 3;
+}

@@ -1,0 +1,12 @@
+syntax="proto3";
+package customers.cb.updatecbtxnstatus;
+
+message updateCBTxnStatusRequest {
+  string order_id = 1;  
+  string status = 2;   
+}
+
+
+message updateCBTxnStatusResponse {
+  string message = 1;  
+}

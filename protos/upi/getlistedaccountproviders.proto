@@ -1,0 +1,30 @@
+syntax="proto3";
+package upi.getListedAccountProviders;
+
+message getListedAccountProvidersRequest{
+    string device_id = 1;
+    string profile_id = 2;
+    string mobile = 3;
+    optional string type = 4;
+}
+
+message getListedAccountProvidersResponse{
+    message AccountDetails {
+        optional string aadhar_otp = 1;                // Corresponds to "aadhar-otp"
+        optional string reg_mob_format = 2;            // Corresponds to "reg-mob-format"
+        optional bool credit_card_support = 3;         // Corresponds to "credit-card-support"
+        optional string lite_version = 4;              // Corresponds to "lite-version"
+        optional string fir_version = 5;               // Corresponds to "fir-version"
+        optional string global_version = 6;            // Corresponds to "global-version"
+        optional string credit_card_version = 7;       // Corresponds to "credit-card-version"
+        optional int32 id = 8;                         // Corresponds to "id"
+        optional string ifsc = 9;                      // Corresponds to "ifsc"
+        optional string account_provider = 10;         // Corresponds to "account-provider"
+        optional bool credit_line_support = 11;        // Corresponds to "credit-line-support"
+        optional string iin = 12;                      // Corresponds to "iin"
+        optional string image_url = 13;
+    };
+    string profile_id = 1;
+    repeated AccountDetails providers = 2;
+    string message = 3;
+}

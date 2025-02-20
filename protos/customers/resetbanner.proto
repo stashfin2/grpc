@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package customers.resetbanner;
+
+
+message resetBannerCodeRequest {}
+
+message resetBannerCodeResponse {
+  string status = 1; 
+}

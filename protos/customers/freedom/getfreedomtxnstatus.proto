@@ -1,0 +1,10 @@
+syntax="proto3";
+package customers.freedom.getfreedomtxnstatus;
+
+message getFreedomTxnStatusRequest {
+  string order_id = 1;
+}
+
+message getFreedomTxnStatusResponse {
+  string status = 1; 
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package customers.getcities;
+
+message getCitiesRequest {
+  int32 state_id = 1;
+}
+
+message City {
+  int32 id = 1;
+  string name = 2;
+}
+
+message getCitiesResponse {
+  repeated City cities = 1;
+}

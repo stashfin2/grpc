@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package customers.cb.cbapplicationrejecteddata;
+
+
+message getCbRejectedDataRequest {
+}
+
+message getCbRejectedDataResponse {
+  repeated string steps = 1;
+}
+

@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+package growth.getchrplans;
+
+message chrplansrequest {}
+
+message plan {
+  int32 id = 1;
+  string product_type = 2;
+  string duration_text = 3;
+  string price = 4;
+  string discounted_price = 5;
+  int32 recommended = 6;
+}
+
+message product {
+  int32 id = 1;
+  string type = 2;
+  string title = 3;
+  repeated int32 feature_ids = 4;
+}
+
+message feature {
+  int32 id = 1;
+  string text = 2;
+}
+
+message plandetailsdata {
+  string header = 1;
+  string message = 2;
+  bool recommended_plan_status=3;
+  recommendedplan recommended_plan_data = 4;
+  message recommendedplan{
+    string label = 1;
+    repeated string benefits = 2;
+    string cta_text = 3;
+    double amount = 4;
+    int32 plan_id = 5;
+  }
+  string bureau_logo = 5;
+  repeated plan plans = 6;
+  repeated product products = 7;
+  repeated feature features = 8;
+}
+
+message chrplansresponse {
+  string status = 1;
+  int32 statusCode = 2;
+  plandetailsdata data = 3;
+  string message = 4;
+}
+
+
+

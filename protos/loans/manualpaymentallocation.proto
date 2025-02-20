@@ -1,0 +1,16 @@
+syntax="proto3";
+
+package loans.manualpaymentallocation;
+
+message manualPaymentAllocationRequest { 
+  int32 customer_id = 1;
+  int32 amount = 2;
+  string type =3;
+  repeated int32 loan_id = 4;
+  string mode = 5;
+}
+
+message manualPaymentAllocationResponse {
+   string message = 1;
+   int32 status = 2;
+}

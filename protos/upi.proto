@@ -1,0 +1,58 @@
+syntax = "proto3";
+package service;
+
+import "upi/getlistedaccountproviders.proto";
+import "upi/updatedevicebinding.proto";
+import "upi/addaccount.proto";
+import "upi/getavailablevpa.proto";
+import "upi/initiatetransaction.proto";
+import "upi/getaccountsbyprovider.proto";
+import "upi/getprofile.proto";
+import "upi/validatevpa.proto";
+import "upi/checktransactionstatus.proto";
+import "upi/blockvpa.proto";
+import "upi/unblockvpa.proto";
+import "upi/listblockedvpa.proto";
+import "upi/validateifsc.proto";
+import "upi/getpendingcollectrequest.proto";
+import "upi/gettransactions.proto";
+import "upi/deregisterprofile.proto";
+import "upi/upinumberoperations.proto";
+import "upi/getallmandates.proto";
+import "upi/getmandatedetails.proto";
+import "upi/getrecentcontacts.proto";
+import "upi/getupinumbers.proto";
+import "upi/initiatemandateaction.proto";
+import "upi/declinemandate.proto";
+import "upi/getmandatehistory.proto";
+import "upi/checkderegisterpermission.proto";
+
+service upi{
+    rpc getListedAccountProviders(.upi.getListedAccountProviders.getListedAccountProvidersRequest) returns (.upi.getListedAccountProviders.getListedAccountProvidersResponse){}
+    rpc updateDeviceBinding(.upi.updateDeviceBinding.updateDeviceBindingRequest) returns (.upi.updateDeviceBinding.updateDeviceBindingResponse){}    
+    rpc getAvailableVPA(.upi.getAvailableVPA.getAvailableVPARequest) returns (.upi.getAvailableVPA.getAvailableVPAResponse){}
+    rpc initiateTransaction(.upi.initiateTransaction.initiateTransactionRequest) returns (.upi.initiateTransaction.initiateTransactionResponse){}
+    rpc addAccount(.upi.addAccount.addAccountRequest) returns (.upi.addAccount.addAccountResponse){}
+    rpc getProfile(.upi.getProfile.getProfileRequest) returns (.upi.getProfile.getProfileResponse){}
+    rpc validateVPA(.upi.validateVPA.validateVPARequest) returns (.upi.validateVPA.validateVPAResponse){}
+    rpc getAccountsByProvider(.upi.getAccountsByProvider.getAccountsByProviderRequest) returns (.upi.getAccountsByProvider.getAccountsByProviderResponse){}
+    rpc checkTransactionStatus(.upi.checkTransactionStatus.checkTransactionStatusRequest) returns (.upi.checkTransactionStatus.checkTransactionStatusResponse){}
+    rpc blockVPA(.upi.blockVPA.blockVPARequest) returns (.upi.blockVPA.blockVPAResponse) {}
+    rpc unblockVPA(.upi.unblockVPA.unblockVPARequest) returns (.upi.unblockVPA.unblockVPAResponse){}
+    rpc listBlockedVPA(.upi.listBlockedVPA.listBlockedVPARequest) returns (.upi.listBlockedVPA.listBlockedVPAResponse){}
+    rpc validateIFSC(.upi.validateIFSC.validateIFSCRequest) returns (.upi.validateIFSC.validateIFSCResponse){}
+    rpc getPendingCollectRequest(.upi.getPendingCollectRequest.pendingCollectRequest) returns(.upi.getPendingCollectRequest.pendingCollectResponse) {}
+    rpc getTransactions(.upi.getTransactions.getTransactionsRequest) returns (.upi.getTransactions.getTransactionsResponse) {}
+    rpc getRecentContacts(.upi.getRecentContacts.getRecentContactsRequest) returns (.upi.getRecentContacts.getRecentContactsResponse) {}
+    rpc deregisterProfile(.upi.deregisterProfile.deregisterProfileReqeust) returns (.upi.deregisterProfile.deregisterProfileResponse){}
+    rpc upiNumberOperations(.upi.upiNumberOperations.upiNumberOperationsRequest) returns (.upi.upiNumberOperations.upiNumberOperationsResponse) {}
+    rpc getAllMandates(.upi.getAllMandates.getAllMandatesRequest) returns(.upi.getAllMandates.getAllMandatesResponse) {}
+    rpc getMandateDetails(.upi.getMandateDetails.getMandatesDetailsRequest) returns (.upi.getMandateDetails.getMandateDetailsReponse){}
+    rpc getUpiNumbers(.upi.getUpiNumbers.getUpiNumbersRequest) returns (.upi.getUpiNumbers.getUpiNumbersResponse) {}
+    rpc initiateMandateAction(.upi.initiateMandateAction.initiateMandateActionRequest) returns (.upi.initiateMandateAction.initiateMandateActionResponse){}
+    rpc checkMandateStatus(.upi.checkTransactionStatus.checkTransactionStatusRequest) returns (.upi.checkTransactionStatus.checkTransactionStatusResponse){}
+    rpc declineMandate(.upi.declineMandate.declineMandateRequest) returns (.upi.declineMandate.declineMandateResponse){}
+    rpc getMandateHistory(.upi.getmandatehistory.getMandateHistoryRequest) returns (.upi.getmandatehistory.getMandateHistoryResponse) {}
+    rpc getAllIpoMandates(.upi.getAllMandates.getAllMandatesRequest) returns(.upi.getAllMandates.getAllMandatesResponse) {}
+    rpc checkDeregisterPermission(.upi.checkDeregisterPermission.checkDeregisterPermissionRequest) returns (.upi.checkDeregisterPermission.checkDeregisterPermissionResponse) {}
+}     

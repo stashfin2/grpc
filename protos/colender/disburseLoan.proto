@@ -1,0 +1,29 @@
+syntax="proto3";
+
+package colender.disburseLoan;
+
+message disburalRequest {
+  int32 customer_id = 1;
+  int32 loan_id = 2;
+  int32 disbursal_amount= 3;
+  int32 approval_amount = 4;
+  string disbursal_date = 5;
+  string disbursal_mode = 6;
+  int32 tenure = 7;
+  int32 roi = 8;
+  int32 daily_roi = 9;
+  string first_emi_date = 10;
+  int32 loan_cycle = 11; 
+  optional string nach_urmn = 12;
+  string utr = 13;
+}
+
+message disburalResponse {
+  string status = 1;
+  int32 colender_id = 2;
+  int32 colender_disbursal_amount = 3;
+  string disbursal_date = 4;
+  string disbursal_mode = 5;
+  int32 colender_percentage = 6;
+  int32 colender_approval_amount = 7;
+}

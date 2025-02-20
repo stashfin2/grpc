@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package customers.lamf.updatelamfjourney;
+
+
+message updateLamfJourneyRequest {}
+
+message updateLamfJourneyResponse {
+  string status = 1; 
+}

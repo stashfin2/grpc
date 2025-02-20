@@ -1,0 +1,13 @@
+syntax="proto3";
+package customers.freedom.updatefreedomtxnstatus;
+
+message updateFreedomTxnStatusRequest {
+  int64 customer_id = 1;  
+  string order_id = 2;  
+  string status = 3;   
+}
+
+message updateFreedomTxnStatusResponse {
+  string message = 1;  
+  int64 acknowledgement = 2;  
+}

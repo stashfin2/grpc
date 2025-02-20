@@ -1,0 +1,12 @@
+syntax="proto3";
+
+package customers.rpd.getrpdtransactionstatus;
+
+message getRpdTransactionStatusRequest {
+     string bill_id = 1;
+}
+
+message getRpdTransactionStatusResponse {
+   string status = 1;
+}
+ 

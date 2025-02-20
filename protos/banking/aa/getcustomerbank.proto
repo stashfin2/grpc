@@ -1,0 +1,20 @@
+syntax="proto3";
+
+package banking.aa.getcustomerbank;
+
+message getCustomerBankRequest {
+  int64 customer_id = 1;
+}
+
+message getCustomerBankResponse {
+  string status = 1;
+  repeated BankData data = 2;
+}
+ 
+message BankData {
+  optional string account_number = 1;
+  optional string ifsc_code = 2;
+  optional string customer_name = 3;
+  optional bool is_primary = 4;
+  optional string bank_logo_url = 5;
+}

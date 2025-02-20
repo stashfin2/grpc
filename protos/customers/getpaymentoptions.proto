@@ -1,0 +1,19 @@
+syntax="proto3";
+package customers.getpaymentoptions;
+
+message paymentOptionRequest{
+    string order_id = 1;
+}
+
+message paymentOptionResponse {
+  repeated PaymentOption options = 1;
+}
+
+message PaymentOption {
+  repeated string modes = 1;     
+  string gateway = 2;             
+  double amount = 3;             
+  double service_fee = 4;         
+  double other_fees = 5;          
+  double total_amount = 6;       
+}

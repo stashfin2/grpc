@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package service;
+
+import "documents/getagreement.proto";
+import "documents/getfinancialdoc.proto";
+
+
+service documents {
+  rpc getagreement(.documents.getagreement.documentrequest) returns (.documents.getagreement.documentresponse) {}
+  rpc getfinancialdoc(.documents.getfinancialdoc.financialdocrequest) returns (.documents.getfinancialdoc.financialdocresponse) {}
+
+}

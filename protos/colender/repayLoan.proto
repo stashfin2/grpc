@@ -1,0 +1,30 @@
+syntax="proto3";
+
+package colender.repayLoan;
+
+message repayRequest {
+  int32 customer_id = 1;
+  int32 loan_id = 2;
+  int32 seq_no = 3;
+  string payment_mode = 4;
+  string utr = 5;
+  string payment_date = 6;
+  int32 payment_id = 7;
+  int32 amount = 8;
+}
+
+message repayResponse {
+  int32 colender_id = 1;
+  optional string query = 2;
+  status actionStatus = 3;
+  repeated string installmentQuery = 4;
+  repeated string paymentsQuery = 5;
+  optional string forecloseQuery = 6;
+  optional string closeLoanQuery = 7;
+}
+
+message status {
+  string status = 1;
+  optional string error = 2;
+  string message = 3;
+}

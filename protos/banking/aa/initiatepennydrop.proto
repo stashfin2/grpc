@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package banking.aa.initiatepennydrop;
+
+message pennyDropRequest {
+  int64 customer_id = 1;          
+  string account_number = 2;
+  string ifsc_code = 3;
+}
+
+message pennyDropResponse {
+   bool success = 1;
+}

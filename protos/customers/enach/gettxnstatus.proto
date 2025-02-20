@@ -1,0 +1,11 @@
+syntax="proto3";
+
+package customers.enach.gettxnstatus;
+
+message getTxnStatusRequest {
+    string txn_id = 1;
+}
+
+message getTxnStatusResponse {
+    string status = 1;
+}

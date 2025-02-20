@@ -1,0 +1,22 @@
+syntax = "proto3";
+ 
+package customers.addmoredetails;
+
+message addMoreDetailsRequest {
+  string father_name = 1;              
+  string occupation = 2;               
+  optional string cur_house = 3;      
+  string cur_address_line1 = 4;             
+  string cur_address_line2 = 5;   
+  string cur_pincode = 6;              
+  bool is_same_per_address = 7;        
+  optional string per_house = 8;      
+  optional string per_address_line1 = 9;   
+  optional string per_address_line2 = 10;  
+  optional string per_pincode = 11;   
+}
+
+message addMoreDetailsResponse {
+  string message = 1;
+}
+ 

@@ -1,0 +1,31 @@
+syntax="proto3";
+
+package kyc.fetchemploymenthistory;
+
+message fetchEmploymentHistoryRequest {
+    string uan = 1;
+    int32 customer_id = 2;
+}
+
+message EmploymentData {
+    string name = 1;
+    optional string guardian_name = 2;
+    string establishment_name = 3;
+    string member_id = 4;
+    string date_of_joining = 5;
+    optional string date_of_exit = 6;
+    optional string exit_reason = 7;
+}
+  
+message Data {
+    string code = 1;
+    string message = 2;
+    EmploymentData employment_data = 3;
+}
+  
+message fetchEmploymentHistoryResponse {
+    Data data = 1;
+    string request_id = 2;
+    int32 customer_id= 3;
+    string uan= 4;
+}

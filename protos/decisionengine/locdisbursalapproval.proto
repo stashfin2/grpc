@@ -1,0 +1,16 @@
+syntax="proto3";
+
+package decisionengine.validateLocDisbursal;
+
+message validateDisbursalRequest {
+    int32 customer_id = 1;
+    int32 loan_id = 2;
+    int32 stashfin_ever_dpd = 3;
+    int32 stashfin_current_dpd = 4;
+}
+
+message validateDisbursalResponse {
+    bool success = 1;
+    optional string message = 2;
+    optional string error_code = 3;
+}

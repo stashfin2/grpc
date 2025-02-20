@@ -1,0 +1,14 @@
+
+syntax="proto3";
+
+package customers.updatejourneystatus;
+
+
+message updateJourneyStatusRequest {
+   string status = 1 ; 
+}
+
+
+message updateJourneyStatusResponse {
+  bool status = 1;
+} 

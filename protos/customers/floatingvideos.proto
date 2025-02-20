@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package customers.floatingvideos;
+
+
+message getFloatingVideosRequest {}
+
+message FloatingVideo {
+    string page_code = 1;
+    string url = 2;
+}
+
+message getFloatingVideosResponse {
+    repeated FloatingVideo videos = 1;
+}

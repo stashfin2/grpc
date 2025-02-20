@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package customers.addfathersname;
+
+
+message addFathersNameRequest {
+   string fathers_name = 1;
+}
+
+message addFathersNameResponse {
+  string success = 1;
+}

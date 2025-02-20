@@ -1,0 +1,35 @@
+syntax="proto3";
+
+package stashcash.getschistory;
+
+message request {
+  int64 customer_id = 1; 
+  string page = 2;
+  string limit = 3;
+  optional string filter_by = 4;
+}
+
+message response {
+  string status = 1;
+  Data data = 2;
+}
+
+message Data {
+  repeated SCtransaction history = 1;
+}
+
+message SCtransaction {
+  int64 id = 1;  
+  int64 customer_id = 2;  
+  int64 campaign_id = 3;  
+  string txn_id = 4; 
+  string sc_type = 5;  
+  double amount = 6;  
+  double remaining = 7;  
+  string txn_type = 8; 
+  string status = 9;  
+  optional string expiry = 10; 
+  string created_at = 11;
+  bool is_active = 12;
+  bool is_deleted = 13;
+}

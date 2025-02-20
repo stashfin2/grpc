@@ -1,0 +1,18 @@
+syntax="proto3";
+package payments.checkpaymentstatus;
+
+message request{
+    int64 customer_id = 1;
+    string client_id = 2;
+    string external_order_id = 3;
+}
+
+message response{
+    string status = 1;
+    int32 status_code = 2;
+    message Data {
+        string payment_status = 1;
+        string external_order_id = 2;
+    }
+    optional Data data = 3;
+}

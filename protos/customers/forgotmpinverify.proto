@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package customers.forgotmpinverify;
+
+message forgotMpinVerifyRequest {  
+   string mobile = 1 ;
+     string otp = 2 ;
+} 
+
+message forgotMpinVerifyResponse {
+   string jwtToken = 1 ;
+   string status = 2 ; 
+}

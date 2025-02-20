@@ -1,0 +1,12 @@
+syntax="proto3";
+
+package customers.updateselfieetxn;
+
+message updateSelfieeTxnRequest {
+   optional string transactionId = 1;
+   optional string status = 2;
+}
+
+message updateSelfieeTxnResponse {
+   bool status = 1 ; 
+}

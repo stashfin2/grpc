@@ -1,0 +1,11 @@
+syntax="proto3";
+
+package customers.syncdecisionengine;
+
+message syncDecisionEngineRequest {
+    string page =1;
+}
+
+message syncDecisionEngineResponse {
+    string status = 1;
+}

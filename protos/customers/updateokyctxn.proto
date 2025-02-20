@@ -1,0 +1,13 @@
+syntax="proto3";
+
+package customers.updateokyctxn;
+
+message updateOkycTxnRequest {
+   optional string transactionId = 1;
+   optional string status = 2;
+   string type = 3;
+}
+
+message updateOkycTxnResponse {
+   bool status = 1 ; 
+}

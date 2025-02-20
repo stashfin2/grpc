@@ -1,0 +1,12 @@
+syntax="proto3";
+package loans.updateloan;
+
+message updateLoanRequest {
+  int32 loan_id =1;
+  string status = 2;
+  int32 customer_id =3;
+}
+ 
+message  updateLoanResponse {
+ int32 id = 1; 
+}

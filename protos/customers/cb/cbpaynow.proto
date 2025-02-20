@@ -1,0 +1,12 @@
+syntax = "proto3";
+package customers.cb.cbpaynow;
+
+message cbPayNowRequest { 
+  int32 amount = 1;
+  string mode = 2;           
+  string  order_id = 3;          
+}
+
+message cbPayNowResponse {
+  string web_url = 1;    
+}

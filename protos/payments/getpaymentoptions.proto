@@ -1,0 +1,26 @@
+syntax="proto3";
+package payments.getpaymentoptions;
+
+message request{
+    int32 customer_id = 1;
+    string client_id = 2;
+    optional double amount = 3;
+}
+
+message response{
+    string status = 1;
+    int32 status_code = 2;
+
+    message Data {
+        string gateway = 1;
+        double amount = 2;
+        double service_fee = 3;
+        double other_fees = 4;
+        double total_amount = 5;
+        repeated string modes = 6;
+    }
+    string client_id = 3;
+    int32 customer_id = 4;
+    repeated Data data = 5;
+    optional string message = 6;
+}

@@ -1,0 +1,17 @@
+syntax="proto3";
+
+package customers.aa.getbanklist;
+
+message getBankListRequest {}
+ 
+message getBankListResponse {
+  repeated BankData fip = 1;
+  string netbanking_url = 2;
+}
+
+message BankData {
+  string id = 1;
+  string name = 2;
+  bool netBankingEnabled = 3;
+  bool pdfJourneyEnabled = 4;
+}

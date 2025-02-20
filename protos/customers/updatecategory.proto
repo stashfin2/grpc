@@ -1,0 +1,14 @@
+syntax="proto3";
+
+package customers.updatecategory;
+
+message updateCategoryRequest {
+  int64 customer_id = 1;
+  string category = 2;
+  string product_code = 3; 
+  repeated string comments = 4;
+}
+
+message updateCategoryResponse {
+  string status = 1;
+}  

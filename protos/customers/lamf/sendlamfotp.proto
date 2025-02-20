@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package customers.lamf.sendlamfotp;
+
+
+message sendLamfOtpRequest {}
+
+message sendLamfOtpResponse {
+  string status = 1; 
+}

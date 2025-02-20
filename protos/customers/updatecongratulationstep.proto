@@ -1,0 +1,10 @@
+syntax="proto3";
+
+package customers.updatecongratulationstep;
+
+message updateCongratulationStepRequest {
+}
+
+message updateCongratulationStepResponse {
+   bool status = 1 ; 
+}

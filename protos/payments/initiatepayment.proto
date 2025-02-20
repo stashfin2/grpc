@@ -1,0 +1,20 @@
+syntax="proto3";
+package payments.initiatepayment;
+
+message request{
+    int64 customer_id = 1;
+    string client_id = 2;
+    string mode = 3;
+    int64 amount = 4;
+    string external_order_id = 5;
+    optional string meta_data = 6;
+}
+
+message response{
+    string status = 1;
+    int32 status_code = 2;
+    message Data {
+        optional string redirect_url = 1;
+    }
+    optional Data data = 3;
+}

@@ -6,11 +6,11 @@ message getTokensRequest{
     string refresh_token = 1;
 }   
 
-message GetTokenData {
+message Data {
     string refresh_token = 1;
     string auth_token = 2;
 }
 message getTokensResponse{
-    GetTokenData data  = 1;
+    Data data  = 1;
     string message = 2;
 }

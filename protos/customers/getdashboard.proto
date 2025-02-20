@@ -1,0 +1,45 @@
+syntax = "proto3";
+
+package customers.getdashboard;
+
+message getDashboardRequest {
+}
+
+message getDashboardResponse {
+  repeated Block blocks = 1;
+}
+
+message Block { 
+  string name = 1; 
+  string title = 2 ; 
+  string code = 3 ; 
+  string group = 4 ;
+  repeated BlockData block_data = 5;
+} 
+
+
+message BlockData {
+  string text = 1;
+  string sub_text = 2;
+  string image_url = 3;
+  string video_url = 4;
+  int32 video_length = 5;
+  string action_url = 6;
+  string landing_page = 7;
+  string api_mode = 8;
+  string app_version = 9;
+  bool old_customers = 10;
+  bool is_new = 11;
+  string action_type = 12;
+  string color1 = 13;
+  string color2 = 14;
+  string image_trailing = 15;
+  Tag tag = 16;
+  string overlay_image = 17;
+}
+
+message Tag {
+  string text = 1;
+  string bg_color = 2;
+  string text_color = 3;
+}

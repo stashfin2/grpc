@@ -1,0 +1,10 @@
+syntax="proto3";
+
+package customers.saveunlocklimit;
+
+message saveUnlockLimitRequest {
+}
+
+message saveUnlockLimitResponse {
+    bool status = 1;
+}

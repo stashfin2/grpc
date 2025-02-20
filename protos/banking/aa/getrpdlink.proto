@@ -1,0 +1,17 @@
+syntax="proto3";
+
+package banking.aa.getrpdlink;
+
+message createRpdLinkRequest {
+  int64 customer_id = 1;
+}
+
+message createRpdLinkResponse {
+  string id = 1;
+  string shortUrl = 2;
+  string status = 3;
+  string traceId = 4;
+  string upiBillId = 5;
+  string upiLink = 6;
+  string validUpto = 7;
+}

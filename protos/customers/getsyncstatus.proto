@@ -1,0 +1,15 @@
+
+syntax = "proto3";
+
+package customers.getsyncstatus;
+
+
+message getSyncStatusRequest {
+}
+
+message getSyncStatusResponse {
+    bool sms_sync = 1;
+    bool app_sync = 2;
+}
+
+

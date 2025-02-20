@@ -1,0 +1,21 @@
+syntax="proto3";
+
+package stashcash.getscbalance;
+
+message request {
+   int64 customer_id = 1;
+}
+
+message response {
+   string status = 1;
+   message Data {
+    float locked = 1; 
+    float unlocked = 2; 
+    float balance = 3;
+    float rupee_balance = 4;
+    bool user_guide = 5;
+    bool is_frozen = 6;
+    float conversion_factor = 7;
+   }
+   Data data = 2;
+}
