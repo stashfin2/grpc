@@ -13,12 +13,12 @@ message BlockedList{
     string blocked_since = 4;
 }
 
-message Data{
+message BlockedListData{
     repeated BlockedList blocked_list = 1;
 } 
 message listBlockedVPAResponse{
     string status= 1;
     string message = 2;
-    optional Data data = 3;
+    optional BlockedListData data = 3;
 
 }

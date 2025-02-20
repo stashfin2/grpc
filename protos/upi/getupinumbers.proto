@@ -11,7 +11,7 @@ message upiNumbersList {
   optional string status = 4;
 }
 
-message Data {
+message upiNumbersListData {
   repeated upiNumbersList upinumbers = 1;
   optional string vpa = 2;
 }
@@ -20,5 +20,5 @@ message Data {
 message getUpiNumbersResponse{
   string status = 1;
   string message = 2;
-  optional Data data = 3;
+  optional upiNumbersListData data = 3;
 }

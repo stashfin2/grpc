@@ -8,10 +8,10 @@ message webTokenRequest {
 
 message webTokenResponse {
     string status = 1;
-    optional Data data = 2;
+    optional cibilwebtokenData data = 2;
 }
 
-message Data {
+message cibilwebtokenData {
     string message = 1;
     string report_url = 2;
     string web_token = 3;

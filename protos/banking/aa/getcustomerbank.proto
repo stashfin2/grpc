@@ -8,10 +8,10 @@ message getCustomerBankRequest {
 
 message getCustomerBankResponse {
   string status = 1;
-  repeated BankData data = 2;
+  repeated customerBankData data = 2;
 }
  
-message BankData {
+message customerBankData {
   optional string account_number = 1;
   optional string ifsc_code = 2;
   optional string customer_name = 3;

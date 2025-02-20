@@ -6,7 +6,7 @@ message initiateMandateActionRequest{
     string umn = 2;
 }
 
-message Data {
+message initiateMandateData {
     string seq_no = 1;
     string txn_hash = 2;
 }
@@ -14,5 +14,5 @@ message Data {
 message initiateMandateActionResponse {
     string status = 1;
     string message = 2;
-    optional Data data = 3;
+    optional initiateMandateData data = 3;
 }
