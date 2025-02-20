@@ -1,9 +1,0 @@
-syntax="proto3";
-package customers.cb.cbsignup;
-
-message cBSignupRequest {
-}
-
-message cBSignupResponse {
-  string success = 1;
-}

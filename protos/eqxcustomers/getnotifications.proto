@@ -27,7 +27,7 @@ message NotificationData {
 
 message Body {
      Notification notification = 1;
-     Data data = 2;
+    GetNotificationData data = 2;
 }
 
 message Notification {
@@ -35,6 +35,6 @@ message Notification {
     string title = 2;
 }
 
-message Data {
+message GetNotificationData {
     string deep_link = 1;
 }

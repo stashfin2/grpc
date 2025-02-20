@@ -1,9 +1,0 @@
-syntax="proto3";
-
-package loans.getcustomerloanstatus;
-
-message getCustomerLoanStatusRequest { }
- 
-message  getCustomerLoanStatusResponse {
-  bool is_loc = 1;
-}

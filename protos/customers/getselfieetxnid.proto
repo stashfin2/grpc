@@ -1,9 +1,0 @@
-syntax="proto3";
-
-package customers.getselfieetxnid;
-
-message getSelfieeTxnIdRequest { }
- 
-message getSelfieeTxnIdResponse {
-  string transaction_id = 1;
-}

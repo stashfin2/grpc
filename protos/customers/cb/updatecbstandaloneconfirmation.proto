@@ -1,9 +1,0 @@
-syntax="proto3";
-package customers.cb.updatecbstandaloneconfirmation;
-
-message updateCbStandAloneConfirmationRequest { 
-}
-
-message updateCbStandAloneConfirmationResponse {
-  string status = 1;  
-}

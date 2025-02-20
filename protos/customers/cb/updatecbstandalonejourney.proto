@@ -1,9 +1,0 @@
-syntax="proto3";
-package customers.cb.updatecbstandalonejourney;
-
-message updateCbStandAloneJourneyRequest { 
-}
-
-message updateCbStandAloneJourneyResponse {
-  string status = 1;  
-}
