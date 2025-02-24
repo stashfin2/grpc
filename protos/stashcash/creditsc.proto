@@ -2,7 +2,7 @@ syntax="proto3";
 
 package stashcash.creditsc;
 
-message creditscRequest {
+message request {
   int64 customer_id = 1;
   int64 campaign_id = 2;
   float amount = 3;
@@ -10,7 +10,7 @@ message creditscRequest {
   optional string expiry = 5;
 }
 
-message creditscResponse {
+message response {
    string status = 1;
    message Data {
     float locked = 1;

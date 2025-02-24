@@ -69,7 +69,7 @@ func (MandatePartner) EnumDescriptor() ([]byte, []int) {
 	return file_payments_nachregistration_proto_rawDescGZIP(), []int{0}
 }
 
-type NachregistrationRequest struct {
+type Request struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -86,8 +86,8 @@ type NachregistrationRequest struct {
 	GatewayIdentifier *MandatePartner `protobuf:"varint,10,opt,name=gatewayIdentifier,proto3,enum=payments.nachregistration.MandatePartner,oneof" json:"gatewayIdentifier,omitempty"`
 }
 
-func (x *NachregistrationRequest) Reset() {
-	*x = NachregistrationRequest{}
+func (x *Request) Reset() {
+	*x = Request{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_payments_nachregistration_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -95,13 +95,13 @@ func (x *NachregistrationRequest) Reset() {
 	}
 }
 
-func (x *NachregistrationRequest) String() string {
+func (x *Request) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*NachregistrationRequest) ProtoMessage() {}
+func (*Request) ProtoMessage() {}
 
-func (x *NachregistrationRequest) ProtoReflect() protoreflect.Message {
+func (x *Request) ProtoReflect() protoreflect.Message {
 	mi := &file_payments_nachregistration_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -113,93 +113,93 @@ func (x *NachregistrationRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use NachregistrationRequest.ProtoReflect.Descriptor instead.
-func (*NachregistrationRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use Request.ProtoReflect.Descriptor instead.
+func (*Request) Descriptor() ([]byte, []int) {
 	return file_payments_nachregistration_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *NachregistrationRequest) GetCustomerId() int64 {
+func (x *Request) GetCustomerId() int64 {
 	if x != nil {
 		return x.CustomerId
 	}
 	return 0
 }
 
-func (x *NachregistrationRequest) GetClientId() string {
+func (x *Request) GetClientId() string {
 	if x != nil {
 		return x.ClientId
 	}
 	return ""
 }
 
-func (x *NachregistrationRequest) GetMandateType() string {
+func (x *Request) GetMandateType() string {
 	if x != nil {
 		return x.MandateType
 	}
 	return ""
 }
 
-func (x *NachregistrationRequest) GetBankName() string {
+func (x *Request) GetBankName() string {
 	if x != nil && x.BankName != nil {
 		return *x.BankName
 	}
 	return ""
 }
 
-func (x *NachregistrationRequest) GetBankAccountNumber() string {
+func (x *Request) GetBankAccountNumber() string {
 	if x != nil && x.BankAccountNumber != nil {
 		return *x.BankAccountNumber
 	}
 	return ""
 }
 
-func (x *NachregistrationRequest) GetBankIfsc() string {
+func (x *Request) GetBankIfsc() string {
 	if x != nil && x.BankIfsc != nil {
 		return *x.BankIfsc
 	}
 	return ""
 }
 
-func (x *NachregistrationRequest) GetMaximumAmount() float32 {
+func (x *Request) GetMaximumAmount() float32 {
 	if x != nil {
 		return x.MaximumAmount
 	}
 	return 0
 }
 
-func (x *NachregistrationRequest) GetExternalOrderId() string {
+func (x *Request) GetExternalOrderId() string {
 	if x != nil {
 		return x.ExternalOrderId
 	}
 	return ""
 }
 
-func (x *NachregistrationRequest) GetVpaId() string {
+func (x *Request) GetVpaId() string {
 	if x != nil && x.VpaId != nil {
 		return *x.VpaId
 	}
 	return ""
 }
 
-func (x *NachregistrationRequest) GetGatewayIdentifier() MandatePartner {
+func (x *Request) GetGatewayIdentifier() MandatePartner {
 	if x != nil && x.GatewayIdentifier != nil {
 		return *x.GatewayIdentifier
 	}
 	return MandatePartner_INVALID
 }
 
-type NachregistrationResponse struct {
+type Response struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Status     string                         `protobuf:"bytes,1,opt,name=status,proto3" json:"status,omitempty"`
-	StatusCode int32                          `protobuf:"varint,2,opt,name=status_code,json=statusCode,proto3" json:"status_code,omitempty"`
-	Data       *NachregistrationResponse_Data `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
+	Status     string         `protobuf:"bytes,1,opt,name=status,proto3" json:"status,omitempty"`
+	StatusCode int32          `protobuf:"varint,2,opt,name=status_code,json=statusCode,proto3" json:"status_code,omitempty"`
+	Data       *Response_Data `protobuf:"bytes,3,opt,name=data,proto3" json:"data,omitempty"`
 }
 
-func (x *NachregistrationResponse) Reset() {
-	*x = NachregistrationResponse{}
+func (x *Response) Reset() {
+	*x = Response{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_payments_nachregistration_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -207,13 +207,13 @@ func (x *NachregistrationResponse) Reset() {
 	}
 }
 
-func (x *NachregistrationResponse) String() string {
+func (x *Response) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*NachregistrationResponse) ProtoMessage() {}
+func (*Response) ProtoMessage() {}
 
-func (x *NachregistrationResponse) ProtoReflect() protoreflect.Message {
+func (x *Response) ProtoReflect() protoreflect.Message {
 	mi := &file_payments_nachregistration_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -225,33 +225,33 @@ func (x *NachregistrationResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use NachregistrationResponse.ProtoReflect.Descriptor instead.
-func (*NachregistrationResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use Response.ProtoReflect.Descriptor instead.
+func (*Response) Descriptor() ([]byte, []int) {
 	return file_payments_nachregistration_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *NachregistrationResponse) GetStatus() string {
+func (x *Response) GetStatus() string {
 	if x != nil {
 		return x.Status
 	}
 	return ""
 }
 
-func (x *NachregistrationResponse) GetStatusCode() int32 {
+func (x *Response) GetStatusCode() int32 {
 	if x != nil {
 		return x.StatusCode
 	}
 	return 0
 }
 
-func (x *NachregistrationResponse) GetData() *NachregistrationResponse_Data {
+func (x *Response) GetData() *Response_Data {
 	if x != nil {
 		return x.Data
 	}
 	return nil
 }
 
-type NachregistrationResponse_Data struct {
+type Response_Data struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -259,8 +259,8 @@ type NachregistrationResponse_Data struct {
 	RedirectUrl string `protobuf:"bytes,1,opt,name=redirect_url,json=redirectUrl,proto3" json:"redirect_url,omitempty"`
 }
 
-func (x *NachregistrationResponse_Data) Reset() {
-	*x = NachregistrationResponse_Data{}
+func (x *Response_Data) Reset() {
+	*x = Response_Data{}
 	if protoimpl.UnsafeEnabled {
 		mi := &file_payments_nachregistration_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -268,13 +268,13 @@ func (x *NachregistrationResponse_Data) Reset() {
 	}
 }
 
-func (x *NachregistrationResponse_Data) String() string {
+func (x *Response_Data) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*NachregistrationResponse_Data) ProtoMessage() {}
+func (*Response_Data) ProtoMessage() {}
 
-func (x *NachregistrationResponse_Data) ProtoReflect() protoreflect.Message {
+func (x *Response_Data) ProtoReflect() protoreflect.Message {
 	mi := &file_payments_nachregistration_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -286,12 +286,12 @@ func (x *NachregistrationResponse_Data) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use NachregistrationResponse_Data.ProtoReflect.Descriptor instead.
-func (*NachregistrationResponse_Data) Descriptor() ([]byte, []int) {
+// Deprecated: Use Response_Data.ProtoReflect.Descriptor instead.
+func (*Response_Data) Descriptor() ([]byte, []int) {
 	return file_payments_nachregistration_proto_rawDescGZIP(), []int{1, 0}
 }
 
-func (x *NachregistrationResponse_Data) GetRedirectUrl() string {
+func (x *Response_Data) GetRedirectUrl() string {
 	if x != nil {
 		return x.RedirectUrl
 	}
@@ -304,9 +304,8 @@ var file_payments_nachregistration_proto_rawDesc = []byte{
 	0x0a, 0x1f, 0x70, 0x61, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x2f, 0x6e, 0x61, 0x63, 0x68, 0x72,
 	0x65, 0x67, 0x69, 0x73, 0x74, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x70, 0x72, 0x6f, 0x74,
 	0x6f, 0x12, 0x19, 0x70, 0x61, 0x79, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x2e, 0x6e, 0x61, 0x63, 0x68,
-	0x72, 0x65, 0x67, 0x69, 0x73, 0x74, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x95, 0x04, 0x0a,
-	0x17, 0x6e, 0x61, 0x63, 0x68, 0x72, 0x65, 0x67, 0x69, 0x73, 0x74, 0x72, 0x61, 0x74, 0x69, 0x6f,
-	0x6e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1f, 0x0a, 0x0b, 0x63, 0x75, 0x73, 0x74,
+	0x72, 0x65, 0x67, 0x69, 0x73, 0x74, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x85, 0x04, 0x0a,
+	0x07, 0x72, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1f, 0x0a, 0x0b, 0x63, 0x75, 0x73, 0x74,
 	0x6f, 0x6d, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x0a, 0x63,
 	0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x49, 0x64, 0x12, 0x1b, 0x0a, 0x09, 0x63, 0x6c, 0x69,
 	0x65, 0x6e, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x63, 0x6c,
@@ -338,16 +337,14 @@ var file_payments_nachregistration_proto_rawDesc = []byte{
 	0x75, 0x6d, 0x62, 0x65, 0x72, 0x42, 0x0c, 0x0a, 0x0a, 0x5f, 0x62, 0x61, 0x6e, 0x6b, 0x5f, 0x69,
 	0x66, 0x73, 0x63, 0x42, 0x09, 0x0a, 0x07, 0x5f, 0x76, 0x70, 0x61, 0x5f, 0x69, 0x64, 0x42, 0x14,
 	0x0a, 0x12, 0x5f, 0x67, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x49, 0x64, 0x65, 0x6e, 0x74, 0x69,
-	0x66, 0x69, 0x65, 0x72, 0x22, 0xcc, 0x01, 0x0a, 0x18, 0x6e, 0x61, 0x63, 0x68, 0x72, 0x65, 0x67,
-	0x69, 0x73, 0x74, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
+	0x66, 0x69, 0x65, 0x72, 0x22, 0xac, 0x01, 0x0a, 0x08, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
 	0x65, 0x12, 0x16, 0x0a, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28,
 	0x09, 0x52, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x1f, 0x0a, 0x0b, 0x73, 0x74, 0x61,
 	0x74, 0x75, 0x73, 0x5f, 0x63, 0x6f, 0x64, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x52, 0x0a,
-	0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x43, 0x6f, 0x64, 0x65, 0x12, 0x4c, 0x0a, 0x04, 0x64, 0x61,
-	0x74, 0x61, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x38, 0x2e, 0x70, 0x61, 0x79, 0x6d, 0x65,
+	0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x43, 0x6f, 0x64, 0x65, 0x12, 0x3c, 0x0a, 0x04, 0x64, 0x61,
+	0x74, 0x61, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x28, 0x2e, 0x70, 0x61, 0x79, 0x6d, 0x65,
 	0x6e, 0x74, 0x73, 0x2e, 0x6e, 0x61, 0x63, 0x68, 0x72, 0x65, 0x67, 0x69, 0x73, 0x74, 0x72, 0x61,
-	0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x6e, 0x61, 0x63, 0x68, 0x72, 0x65, 0x67, 0x69, 0x73, 0x74, 0x72,
-	0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x2e, 0x44, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x2e, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x2e, 0x44, 0x61,
 	0x74, 0x61, 0x52, 0x04, 0x64, 0x61, 0x74, 0x61, 0x1a, 0x29, 0x0a, 0x04, 0x44, 0x61, 0x74, 0x61,
 	0x12, 0x21, 0x0a, 0x0c, 0x72, 0x65, 0x64, 0x69, 0x72, 0x65, 0x63, 0x74, 0x5f, 0x75, 0x72, 0x6c,
 	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x72, 0x65, 0x64, 0x69, 0x72, 0x65, 0x63, 0x74,
@@ -373,14 +370,14 @@ func file_payments_nachregistration_proto_rawDescGZIP() []byte {
 var file_payments_nachregistration_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
 var file_payments_nachregistration_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_payments_nachregistration_proto_goTypes = []interface{}{
-	(MandatePartner)(0),                   // 0: payments.nachregistration.MandatePartner
-	(*NachregistrationRequest)(nil),       // 1: payments.nachregistration.nachregistrationRequest
-	(*NachregistrationResponse)(nil),      // 2: payments.nachregistration.nachregistrationResponse
-	(*NachregistrationResponse_Data)(nil), // 3: payments.nachregistration.nachregistrationResponse.Data
+	(MandatePartner)(0),   // 0: payments.nachregistration.MandatePartner
+	(*Request)(nil),       // 1: payments.nachregistration.request
+	(*Response)(nil),      // 2: payments.nachregistration.response
+	(*Response_Data)(nil), // 3: payments.nachregistration.response.Data
 }
 var file_payments_nachregistration_proto_depIdxs = []int32{
-	0, // 0: payments.nachregistration.nachregistrationRequest.gatewayIdentifier:type_name -> payments.nachregistration.MandatePartner
-	3, // 1: payments.nachregistration.nachregistrationResponse.data:type_name -> payments.nachregistration.nachregistrationResponse.Data
+	0, // 0: payments.nachregistration.request.gatewayIdentifier:type_name -> payments.nachregistration.MandatePartner
+	3, // 1: payments.nachregistration.response.data:type_name -> payments.nachregistration.response.Data
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type
 	2, // [2:2] is the sub-list for extension type_name
@@ -395,7 +392,7 @@ func file_payments_nachregistration_proto_init() {
 	}
 	if !protoimpl.UnsafeEnabled {
 		file_payments_nachregistration_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NachregistrationRequest); i {
+			switch v := v.(*Request); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -407,7 +404,7 @@ func file_payments_nachregistration_proto_init() {
 			}
 		}
 		file_payments_nachregistration_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NachregistrationResponse); i {
+			switch v := v.(*Response); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -419,7 +416,7 @@ func file_payments_nachregistration_proto_init() {
 			}
 		}
 		file_payments_nachregistration_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*NachregistrationResponse_Data); i {
+			switch v := v.(*Response_Data); i {
 			case 0:
 				return &v.state
 			case 1:

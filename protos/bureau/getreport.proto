@@ -12,10 +12,10 @@ message bureauRequest {
 
 message bureauResponse {
     string status = 1;
-    optional reportData data = 2;
+    optional Report data = 2;
 }
 
-message reportData {
+message Report {
     int32 report_id = 1;
     int32 score = 2;
     string type = 3;    

@@ -20,11 +20,11 @@ message getstepResponse {
         bool is_popup = 6;
         string keyboard_type = 7;
         string text_capitalization = 8;
-        repeated stepValidationData validations = 9;
+        repeated Validation validations = 9;
     }
 }
 
-message stepValidationData {
+message Validation {
     string key = 1;
     string value = 2;
     string message = 3;

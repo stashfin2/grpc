@@ -23,12 +23,12 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type PaymentsnodeClient interface {
-	Getpaymentoptions(ctx context.Context, in *payments.GetpaymentoptionsRequest, opts ...grpc.CallOption) (*payments.GetpaymentoptionsResponse, error)
-	Initiatepayment(ctx context.Context, in *payments.InitiatepaymentRequest, opts ...grpc.CallOption) (*payments.InitiatepaymentResponse, error)
-	Checkpaymentstatus(ctx context.Context, in *payments.CheckpaymentstatusRequest, opts ...grpc.CallOption) (*payments.CheckpaymentstatusResponse, error)
-	Nachregistration(ctx context.Context, in *payments.NachregistrationRequest, opts ...grpc.CallOption) (*payments.NachregistrationResponse, error)
-	Nachpresentation(ctx context.Context, in *payments.NachpresentationRequest, opts ...grpc.CallOption) (*payments.NachpresentationResponse, error)
-	Fundtransfer(ctx context.Context, in *payments.FundtransferRequest, opts ...grpc.CallOption) (*payments.FundtransferResponse, error)
+	Getpaymentoptions(ctx context.Context, in *payments.Request, opts ...grpc.CallOption) (*payments.Response, error)
+	Initiatepayment(ctx context.Context, in *payments.Request, opts ...grpc.CallOption) (*payments.Response, error)
+	Checkpaymentstatus(ctx context.Context, in *payments.Request, opts ...grpc.CallOption) (*payments.Response, error)
+	Nachregistration(ctx context.Context, in *payments.Request, opts ...grpc.CallOption) (*payments.Response, error)
+	Nachpresentation(ctx context.Context, in *payments.Request, opts ...grpc.CallOption) (*payments.Response, error)
+	Fundtransfer(ctx context.Context, in *payments.Request, opts ...grpc.CallOption) (*payments.Response, error)
 }
 
 type paymentsnodeClient struct {
@@ -39,8 +39,8 @@ func NewPaymentsnodeClient(cc grpc.ClientConnInterface) PaymentsnodeClient {
 	return &paymentsnodeClient{cc}
 }
 
-func (c *paymentsnodeClient) Getpaymentoptions(ctx context.Context, in *payments.GetpaymentoptionsRequest, opts ...grpc.CallOption) (*payments.GetpaymentoptionsResponse, error) {
-	out := new(payments.GetpaymentoptionsResponse)
+func (c *paymentsnodeClient) Getpaymentoptions(ctx context.Context, in *payments.Request, opts ...grpc.CallOption) (*payments.Response, error) {
+	out := new(payments.Response)
 	err := c.cc.Invoke(ctx, "/service.paymentsnode/getpaymentoptions", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -48,8 +48,8 @@ func (c *paymentsnodeClient) Getpaymentoptions(ctx context.Context, in *payments
 	return out, nil
 }
 
-func (c *paymentsnodeClient) Initiatepayment(ctx context.Context, in *payments.InitiatepaymentRequest, opts ...grpc.CallOption) (*payments.InitiatepaymentResponse, error) {
-	out := new(payments.InitiatepaymentResponse)
+func (c *paymentsnodeClient) Initiatepayment(ctx context.Context, in *payments.Request, opts ...grpc.CallOption) (*payments.Response, error) {
+	out := new(payments.Response)
 	err := c.cc.Invoke(ctx, "/service.paymentsnode/initiatepayment", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -57,8 +57,8 @@ func (c *paymentsnodeClient) Initiatepayment(ctx context.Context, in *payments.I
 	return out, nil
 }
 
-func (c *paymentsnodeClient) Checkpaymentstatus(ctx context.Context, in *payments.CheckpaymentstatusRequest, opts ...grpc.CallOption) (*payments.CheckpaymentstatusResponse, error) {
-	out := new(payments.CheckpaymentstatusResponse)
+func (c *paymentsnodeClient) Checkpaymentstatus(ctx context.Context, in *payments.Request, opts ...grpc.CallOption) (*payments.Response, error) {
+	out := new(payments.Response)
 	err := c.cc.Invoke(ctx, "/service.paymentsnode/checkpaymentstatus", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -66,8 +66,8 @@ func (c *paymentsnodeClient) Checkpaymentstatus(ctx context.Context, in *payment
 	return out, nil
 }
 
-func (c *paymentsnodeClient) Nachregistration(ctx context.Context, in *payments.NachregistrationRequest, opts ...grpc.CallOption) (*payments.NachregistrationResponse, error) {
-	out := new(payments.NachregistrationResponse)
+func (c *paymentsnodeClient) Nachregistration(ctx context.Context, in *payments.Request, opts ...grpc.CallOption) (*payments.Response, error) {
+	out := new(payments.Response)
 	err := c.cc.Invoke(ctx, "/service.paymentsnode/nachregistration", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -75,8 +75,8 @@ func (c *paymentsnodeClient) Nachregistration(ctx context.Context, in *payments.
 	return out, nil
 }
 
-func (c *paymentsnodeClient) Nachpresentation(ctx context.Context, in *payments.NachpresentationRequest, opts ...grpc.CallOption) (*payments.NachpresentationResponse, error) {
-	out := new(payments.NachpresentationResponse)
+func (c *paymentsnodeClient) Nachpresentation(ctx context.Context, in *payments.Request, opts ...grpc.CallOption) (*payments.Response, error) {
+	out := new(payments.Response)
 	err := c.cc.Invoke(ctx, "/service.paymentsnode/nachpresentation", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -84,8 +84,8 @@ func (c *paymentsnodeClient) Nachpresentation(ctx context.Context, in *payments.
 	return out, nil
 }
 
-func (c *paymentsnodeClient) Fundtransfer(ctx context.Context, in *payments.FundtransferRequest, opts ...grpc.CallOption) (*payments.FundtransferResponse, error) {
-	out := new(payments.FundtransferResponse)
+func (c *paymentsnodeClient) Fundtransfer(ctx context.Context, in *payments.Request, opts ...grpc.CallOption) (*payments.Response, error) {
+	out := new(payments.Response)
 	err := c.cc.Invoke(ctx, "/service.paymentsnode/fundtransfer", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -97,12 +97,12 @@ func (c *paymentsnodeClient) Fundtransfer(ctx context.Context, in *payments.Fund
 // All implementations must embed UnimplementedPaymentsnodeServer
 // for forward compatibility
 type PaymentsnodeServer interface {
-	Getpaymentoptions(context.Context, *payments.GetpaymentoptionsRequest) (*payments.GetpaymentoptionsResponse, error)
-	Initiatepayment(context.Context, *payments.InitiatepaymentRequest) (*payments.InitiatepaymentResponse, error)
-	Checkpaymentstatus(context.Context, *payments.CheckpaymentstatusRequest) (*payments.CheckpaymentstatusResponse, error)
-	Nachregistration(context.Context, *payments.NachregistrationRequest) (*payments.NachregistrationResponse, error)
-	Nachpresentation(context.Context, *payments.NachpresentationRequest) (*payments.NachpresentationResponse, error)
-	Fundtransfer(context.Context, *payments.FundtransferRequest) (*payments.FundtransferResponse, error)
+	Getpaymentoptions(context.Context, *payments.Request) (*payments.Response, error)
+	Initiatepayment(context.Context, *payments.Request) (*payments.Response, error)
+	Checkpaymentstatus(context.Context, *payments.Request) (*payments.Response, error)
+	Nachregistration(context.Context, *payments.Request) (*payments.Response, error)
+	Nachpresentation(context.Context, *payments.Request) (*payments.Response, error)
+	Fundtransfer(context.Context, *payments.Request) (*payments.Response, error)
 	mustEmbedUnimplementedPaymentsnodeServer()
 }
 
@@ -110,22 +110,22 @@ type PaymentsnodeServer interface {
 type UnimplementedPaymentsnodeServer struct {
 }
 
-func (UnimplementedPaymentsnodeServer) Getpaymentoptions(context.Context, *payments.GetpaymentoptionsRequest) (*payments.GetpaymentoptionsResponse, error) {
+func (UnimplementedPaymentsnodeServer) Getpaymentoptions(context.Context, *payments.Request) (*payments.Response, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Getpaymentoptions not implemented")
 }
-func (UnimplementedPaymentsnodeServer) Initiatepayment(context.Context, *payments.InitiatepaymentRequest) (*payments.InitiatepaymentResponse, error) {
+func (UnimplementedPaymentsnodeServer) Initiatepayment(context.Context, *payments.Request) (*payments.Response, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Initiatepayment not implemented")
 }
-func (UnimplementedPaymentsnodeServer) Checkpaymentstatus(context.Context, *payments.CheckpaymentstatusRequest) (*payments.CheckpaymentstatusResponse, error) {
+func (UnimplementedPaymentsnodeServer) Checkpaymentstatus(context.Context, *payments.Request) (*payments.Response, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Checkpaymentstatus not implemented")
 }
-func (UnimplementedPaymentsnodeServer) Nachregistration(context.Context, *payments.NachregistrationRequest) (*payments.NachregistrationResponse, error) {
+func (UnimplementedPaymentsnodeServer) Nachregistration(context.Context, *payments.Request) (*payments.Response, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Nachregistration not implemented")
 }
-func (UnimplementedPaymentsnodeServer) Nachpresentation(context.Context, *payments.NachpresentationRequest) (*payments.NachpresentationResponse, error) {
+func (UnimplementedPaymentsnodeServer) Nachpresentation(context.Context, *payments.Request) (*payments.Response, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Nachpresentation not implemented")
 }
-func (UnimplementedPaymentsnodeServer) Fundtransfer(context.Context, *payments.FundtransferRequest) (*payments.FundtransferResponse, error) {
+func (UnimplementedPaymentsnodeServer) Fundtransfer(context.Context, *payments.Request) (*payments.Response, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Fundtransfer not implemented")
 }
 func (UnimplementedPaymentsnodeServer) mustEmbedUnimplementedPaymentsnodeServer() {}
@@ -142,7 +142,7 @@ func RegisterPaymentsnodeServer(s grpc.ServiceRegistrar, srv PaymentsnodeServer)
 }
 
 func _Paymentsnode_Getpaymentoptions_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(payments.GetpaymentoptionsRequest)
+	in := new(payments.Request)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -154,13 +154,13 @@ func _Paymentsnode_Getpaymentoptions_Handler(srv interface{}, ctx context.Contex
 		FullMethod: "/service.paymentsnode/getpaymentoptions",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(PaymentsnodeServer).Getpaymentoptions(ctx, req.(*payments.GetpaymentoptionsRequest))
+		return srv.(PaymentsnodeServer).Getpaymentoptions(ctx, req.(*payments.Request))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Paymentsnode_Initiatepayment_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(payments.InitiatepaymentRequest)
+	in := new(payments.Request)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -172,13 +172,13 @@ func _Paymentsnode_Initiatepayment_Handler(srv interface{}, ctx context.Context,
 		FullMethod: "/service.paymentsnode/initiatepayment",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(PaymentsnodeServer).Initiatepayment(ctx, req.(*payments.InitiatepaymentRequest))
+		return srv.(PaymentsnodeServer).Initiatepayment(ctx, req.(*payments.Request))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Paymentsnode_Checkpaymentstatus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(payments.CheckpaymentstatusRequest)
+	in := new(payments.Request)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -190,13 +190,13 @@ func _Paymentsnode_Checkpaymentstatus_Handler(srv interface{}, ctx context.Conte
 		FullMethod: "/service.paymentsnode/checkpaymentstatus",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(PaymentsnodeServer).Checkpaymentstatus(ctx, req.(*payments.CheckpaymentstatusRequest))
+		return srv.(PaymentsnodeServer).Checkpaymentstatus(ctx, req.(*payments.Request))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Paymentsnode_Nachregistration_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(payments.NachregistrationRequest)
+	in := new(payments.Request)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -208,13 +208,13 @@ func _Paymentsnode_Nachregistration_Handler(srv interface{}, ctx context.Context
 		FullMethod: "/service.paymentsnode/nachregistration",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(PaymentsnodeServer).Nachregistration(ctx, req.(*payments.NachregistrationRequest))
+		return srv.(PaymentsnodeServer).Nachregistration(ctx, req.(*payments.Request))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Paymentsnode_Nachpresentation_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(payments.NachpresentationRequest)
+	in := new(payments.Request)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -226,13 +226,13 @@ func _Paymentsnode_Nachpresentation_Handler(srv interface{}, ctx context.Context
 		FullMethod: "/service.paymentsnode/nachpresentation",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(PaymentsnodeServer).Nachpresentation(ctx, req.(*payments.NachpresentationRequest))
+		return srv.(PaymentsnodeServer).Nachpresentation(ctx, req.(*payments.Request))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Paymentsnode_Fundtransfer_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(payments.FundtransferRequest)
+	in := new(payments.Request)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -244,7 +244,7 @@ func _Paymentsnode_Fundtransfer_Handler(srv interface{}, ctx context.Context, de
 		FullMethod: "/service.paymentsnode/fundtransfer",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(PaymentsnodeServer).Fundtransfer(ctx, req.(*payments.FundtransferRequest))
+		return srv.(PaymentsnodeServer).Fundtransfer(ctx, req.(*payments.Request))
 	}
 	return interceptor(ctx, in, info, handler)
 }
