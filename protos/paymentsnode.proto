@@ -9,10 +9,10 @@ import "payments/nachpresentation.proto";
 import "payments/fundtransfer.proto";
 
 service paymentsnode{
-    rpc getpaymentoptions(.payments.getpaymentoptions.request) returns (.payments.getpaymentoptions.response) {}
-    rpc initiatepayment(.payments.initiatepayment.request) returns (.payments.initiatepayment.response) {}
-    rpc checkpaymentstatus(.payments.checkpaymentstatus.request) returns (.payments.checkpaymentstatus.response){}
-    rpc nachregistration(.payments.nachregistration.request) returns (.payments.nachregistration.response){}
-    rpc nachpresentation(.payments.nachpresentation.request) returns (.payments.nachpresentation.response){}
-    rpc fundtransfer(.payments.fundtransfer.request) returns (.payments.fundtransfer.response){}
+    rpc getpaymentoptions(.payments.getpaymentoptions.getpaymentoptionsRequest) returns (.payments.getpaymentoptions.getpaymentoptionsResponse) {}
+    rpc initiatepayment(.payments.initiatepayment.initiatepaymentRequest) returns (.payments.initiatepayment.initiatepaymentResponse) {}
+    rpc checkpaymentstatus(.payments.checkpaymentstatus.checkpaymentstatusRequest) returns (.payments.checkpaymentstatus.checkpaymentstatusResponse){}
+    rpc nachregistration(.payments.nachregistration.nachregistrationRequest) returns (.payments.nachregistration.nachregistrationResponse){}
+    rpc nachpresentation(.payments.nachpresentation.nachpresentationRequest) returns (.payments.nachpresentation.nachpresentationResponse){}
+    rpc fundtransfer(.payments.fundtransfer.fundtransferRequest) returns (.payments.fundtransfer.fundtransferResponse){}
 }

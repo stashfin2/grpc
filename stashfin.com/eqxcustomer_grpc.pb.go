@@ -33,6 +33,7 @@ type EqxcustomersClient interface {
 	UpdateNotifications(ctx context.Context, in *eqxcustomers.UpdateNotificationRequest, opts ...grpc.CallOption) (*eqxcustomers.UpdateNotificationResponse, error)
 	VerifyToken(ctx context.Context, in *eqxcustomers.VerifyTokenRequest, opts ...grpc.CallOption) (*eqxcustomers.VerifyTokenResponse, error)
 	GetTokens(ctx context.Context, in *eqxcustomers.GetTokensRequest, opts ...grpc.CallOption) (*eqxcustomers.GetTokensResponse, error)
+	GetCustomerByMobile(ctx context.Context, in *eqxcustomers.GetCustomerByMobileRequest, opts ...grpc.CallOption) (*eqxcustomers.GetCustomerByMobileResponse, error)
 }
 
 type eqxcustomersClient struct {
@@ -133,6 +134,15 @@ func (c *eqxcustomersClient) GetTokens(ctx context.Context, in *eqxcustomers.Get
 	return out, nil
 }
 
+func (c *eqxcustomersClient) GetCustomerByMobile(ctx context.Context, in *eqxcustomers.GetCustomerByMobileRequest, opts ...grpc.CallOption) (*eqxcustomers.GetCustomerByMobileResponse, error) {
+	out := new(eqxcustomers.GetCustomerByMobileResponse)
+	err := c.cc.Invoke(ctx, "/service.eqxcustomers/getCustomerByMobile", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // EqxcustomersServer is the server API for Eqxcustomers service.
 // All implementations must embed UnimplementedEqxcustomersServer
 // for forward compatibility
@@ -147,6 +157,7 @@ type EqxcustomersServer interface {
 	UpdateNotifications(context.Context, *eqxcustomers.UpdateNotificationRequest) (*eqxcustomers.UpdateNotificationResponse, error)
 	VerifyToken(context.Context, *eqxcustomers.VerifyTokenRequest) (*eqxcustomers.VerifyTokenResponse, error)
 	GetTokens(context.Context, *eqxcustomers.GetTokensRequest) (*eqxcustomers.GetTokensResponse, error)
+	GetCustomerByMobile(context.Context, *eqxcustomers.GetCustomerByMobileRequest) (*eqxcustomers.GetCustomerByMobileResponse, error)
 	mustEmbedUnimplementedEqxcustomersServer()
 }
 
@@ -183,6 +194,9 @@ func (UnimplementedEqxcustomersServer) VerifyToken(context.Context, *eqxcustomer
 }
 func (UnimplementedEqxcustomersServer) GetTokens(context.Context, *eqxcustomers.GetTokensRequest) (*eqxcustomers.GetTokensResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetTokens not implemented")
+}
+func (UnimplementedEqxcustomersServer) GetCustomerByMobile(context.Context, *eqxcustomers.GetCustomerByMobileRequest) (*eqxcustomers.GetCustomerByMobileResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetCustomerByMobile not implemented")
 }
 func (UnimplementedEqxcustomersServer) mustEmbedUnimplementedEqxcustomersServer() {}
 
@@ -377,6 +391,24 @@ func _Eqxcustomers_GetTokens_Handler(srv interface{}, ctx context.Context, dec f
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Eqxcustomers_GetCustomerByMobile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(eqxcustomers.GetCustomerByMobileRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(EqxcustomersServer).GetCustomerByMobile(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/service.eqxcustomers/getCustomerByMobile",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(EqxcustomersServer).GetCustomerByMobile(ctx, req.(*eqxcustomers.GetCustomerByMobileRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Eqxcustomers_ServiceDesc is the grpc.ServiceDesc for Eqxcustomers service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -423,6 +455,10 @@ var Eqxcustomers_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "getTokens",
 			Handler:    _Eqxcustomers_GetTokens_Handler,
+		},
+		{
+			MethodName: "getCustomerByMobile",
+			Handler:    _Eqxcustomers_GetCustomerByMobile_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

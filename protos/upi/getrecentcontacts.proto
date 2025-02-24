@@ -18,11 +18,11 @@ message RecentContacts{// Payment timestamp in ISO format
   optional string  amount = 6;
 }
 
-message Data {
+message RecentContactsData {
   repeated RecentContacts contacts = 1;
 }
 message getRecentContactsResponse{
   string status  = 1;
   string message = 2;
-  optional Data data = 3;
+  optional RecentContactsData data = 3;
 }

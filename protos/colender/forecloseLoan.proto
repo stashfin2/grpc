@@ -16,14 +16,14 @@ message forecloseRequest {
 message forecloseResponse {
   int32 colender_id = 1;
   optional string query = 2;
-  status actionStatus = 3;
+  forecloseLoanStatus actionStatus = 3;
   repeated string installmentQuery = 4;
   repeated string paymentsQuery = 5;
   string forecloseQuery = 6;
   optional string closeLoanQuery = 7;
 }
 
-message status {
+message forecloseLoanStatus {
   string status = 1;
   optional string error = 2;
   string message = 3;

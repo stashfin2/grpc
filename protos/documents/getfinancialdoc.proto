@@ -35,7 +35,7 @@ message financialdocrequest {
     }
 }
 
-message agreementdata{
+message financialAgreementdata{
  string financial_doc_url=1;
  string sanction_latter_url=2;
 }
@@ -44,6 +44,6 @@ message agreementdata{
 message financialdocresponse {
   string status = 1;
   int32 statusCode = 2;
-  agreementdata data = 3;
+  financialAgreementdata data = 3;
   string message = 4;
 }

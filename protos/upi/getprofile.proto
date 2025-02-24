@@ -27,18 +27,18 @@ message MobileAppData {
   optional string merchantUser = 1;
   optional string name = 2;
   optional string mobile = 3;
-  optional Details details = 4;
+  optional AccountsCollection details = 4;
   optional string userType = 5;
   optional string status = 6;
 }
 
 // Details nested message
-message Details {
-  repeated Account accounts = 1;
+message AccountsCollection {
+  repeated LinkedAccount accounts = 1;
 }
 
 // Account nested message
-message Account {
+message LinkedAccount {
   optional string reg_mob_format = 1;
   optional string default_va = 2;
   optional string mmid = 3;
