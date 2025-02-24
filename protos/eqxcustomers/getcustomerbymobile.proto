@@ -3,6 +3,7 @@ syntax="proto3";
 package eqxcustomers.getcustomerbymobile;
 
 message getCustomerByMobileRequest {
+  string mobile = 1;
 }
 
 message getCustomerByMobileResponse {
