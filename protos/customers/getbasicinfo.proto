@@ -8,12 +8,12 @@ message getBasicInfoResponse {
   string mobile = 1;
   string pan = 2;
   string aadhaar = 3;   
-  string personal_email = 4 ;
-  basicInfoAddress curr_address = 5 ;
-  basicInfoAddress permanent_address = 6 ;
+  string personal_email = 4 ; 
+  Address curr_address = 5 ;  
+  Address permanent_address = 6 ; 
 }
 
-message basicInfoAddress {
+message Address {
   string house_flat_no = 1;
   string address_line_1 = 2;
   string address_line_2 = 3;

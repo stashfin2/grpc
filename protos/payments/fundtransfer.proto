@@ -1,7 +1,7 @@
 syntax="proto3";
 package payments.fundtransfer;
 
-message fundtransferRequest{
+message request{
     int32 customer_id = 1;
     string client_id = 2;
     string external_order_id = 3;
@@ -22,7 +22,7 @@ message fundtransferRequest{
 }
 
 
-message fundtransferResponse{
+message response{
     string status = 1;
     int32 status_code = 2;
     int32 customer_id = 3;

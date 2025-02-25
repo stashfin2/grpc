@@ -2,7 +2,7 @@ syntax="proto3";
 
 package stashcash.debitsc;
 
-message debitscRequest {
+message request {
   int64 customer_id = 1;
   int32 flag = 2;
   int64 campaign_id = 3;
@@ -11,7 +11,7 @@ message debitscRequest {
   optional string txn_id = 6;
 }
 
-message debitscResponse {
+message response {
    string status = 1;
    message Data {
     optional float locked = 1;

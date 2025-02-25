@@ -23,9 +23,9 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type LamfClient interface {
-	Validatelamfuser(ctx context.Context, in *lamf.ValidateuserRequest, opts ...grpc.CallOption) (*lamf.ValidateuserResponse, error)
-	Submitlamfotp(ctx context.Context, in *lamf.SubmitotpRequest, opts ...grpc.CallOption) (*lamf.SubmitotpResponse, error)
-	Getlamfloandetails(ctx context.Context, in *lamf.GetloandetailsRequest, opts ...grpc.CallOption) (*lamf.GetloandetailsResponse, error)
+	Validatelamfuser(ctx context.Context, in *lamf.Request, opts ...grpc.CallOption) (*lamf.Response, error)
+	Submitlamfotp(ctx context.Context, in *lamf.Request, opts ...grpc.CallOption) (*lamf.Response, error)
+	Getlamfloandetails(ctx context.Context, in *lamf.Request, opts ...grpc.CallOption) (*lamf.Response, error)
 }
 
 type lamfClient struct {
@@ -36,8 +36,8 @@ func NewLamfClient(cc grpc.ClientConnInterface) LamfClient {
 	return &lamfClient{cc}
 }
 
-func (c *lamfClient) Validatelamfuser(ctx context.Context, in *lamf.ValidateuserRequest, opts ...grpc.CallOption) (*lamf.ValidateuserResponse, error) {
-	out := new(lamf.ValidateuserResponse)
+func (c *lamfClient) Validatelamfuser(ctx context.Context, in *lamf.Request, opts ...grpc.CallOption) (*lamf.Response, error) {
+	out := new(lamf.Response)
 	err := c.cc.Invoke(ctx, "/service.lamf/validatelamfuser", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -45,8 +45,8 @@ func (c *lamfClient) Validatelamfuser(ctx context.Context, in *lamf.Validateuser
 	return out, nil
 }
 
-func (c *lamfClient) Submitlamfotp(ctx context.Context, in *lamf.SubmitotpRequest, opts ...grpc.CallOption) (*lamf.SubmitotpResponse, error) {
-	out := new(lamf.SubmitotpResponse)
+func (c *lamfClient) Submitlamfotp(ctx context.Context, in *lamf.Request, opts ...grpc.CallOption) (*lamf.Response, error) {
+	out := new(lamf.Response)
 	err := c.cc.Invoke(ctx, "/service.lamf/submitlamfotp", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -54,8 +54,8 @@ func (c *lamfClient) Submitlamfotp(ctx context.Context, in *lamf.SubmitotpReques
 	return out, nil
 }
 
-func (c *lamfClient) Getlamfloandetails(ctx context.Context, in *lamf.GetloandetailsRequest, opts ...grpc.CallOption) (*lamf.GetloandetailsResponse, error) {
-	out := new(lamf.GetloandetailsResponse)
+func (c *lamfClient) Getlamfloandetails(ctx context.Context, in *lamf.Request, opts ...grpc.CallOption) (*lamf.Response, error) {
+	out := new(lamf.Response)
 	err := c.cc.Invoke(ctx, "/service.lamf/getlamfloandetails", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -67,9 +67,9 @@ func (c *lamfClient) Getlamfloandetails(ctx context.Context, in *lamf.Getloandet
 // All implementations must embed UnimplementedLamfServer
 // for forward compatibility
 type LamfServer interface {
-	Validatelamfuser(context.Context, *lamf.ValidateuserRequest) (*lamf.ValidateuserResponse, error)
-	Submitlamfotp(context.Context, *lamf.SubmitotpRequest) (*lamf.SubmitotpResponse, error)
-	Getlamfloandetails(context.Context, *lamf.GetloandetailsRequest) (*lamf.GetloandetailsResponse, error)
+	Validatelamfuser(context.Context, *lamf.Request) (*lamf.Response, error)
+	Submitlamfotp(context.Context, *lamf.Request) (*lamf.Response, error)
+	Getlamfloandetails(context.Context, *lamf.Request) (*lamf.Response, error)
 	mustEmbedUnimplementedLamfServer()
 }
 
@@ -77,13 +77,13 @@ type LamfServer interface {
 type UnimplementedLamfServer struct {
 }
 
-func (UnimplementedLamfServer) Validatelamfuser(context.Context, *lamf.ValidateuserRequest) (*lamf.ValidateuserResponse, error) {
+func (UnimplementedLamfServer) Validatelamfuser(context.Context, *lamf.Request) (*lamf.Response, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Validatelamfuser not implemented")
 }
-func (UnimplementedLamfServer) Submitlamfotp(context.Context, *lamf.SubmitotpRequest) (*lamf.SubmitotpResponse, error) {
+func (UnimplementedLamfServer) Submitlamfotp(context.Context, *lamf.Request) (*lamf.Response, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Submitlamfotp not implemented")
 }
-func (UnimplementedLamfServer) Getlamfloandetails(context.Context, *lamf.GetloandetailsRequest) (*lamf.GetloandetailsResponse, error) {
+func (UnimplementedLamfServer) Getlamfloandetails(context.Context, *lamf.Request) (*lamf.Response, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Getlamfloandetails not implemented")
 }
 func (UnimplementedLamfServer) mustEmbedUnimplementedLamfServer() {}
@@ -100,7 +100,7 @@ func RegisterLamfServer(s grpc.ServiceRegistrar, srv LamfServer) {
 }
 
 func _Lamf_Validatelamfuser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(lamf.ValidateuserRequest)
+	in := new(lamf.Request)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -112,13 +112,13 @@ func _Lamf_Validatelamfuser_Handler(srv interface{}, ctx context.Context, dec fu
 		FullMethod: "/service.lamf/validatelamfuser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LamfServer).Validatelamfuser(ctx, req.(*lamf.ValidateuserRequest))
+		return srv.(LamfServer).Validatelamfuser(ctx, req.(*lamf.Request))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Lamf_Submitlamfotp_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(lamf.SubmitotpRequest)
+	in := new(lamf.Request)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -130,13 +130,13 @@ func _Lamf_Submitlamfotp_Handler(srv interface{}, ctx context.Context, dec func(
 		FullMethod: "/service.lamf/submitlamfotp",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LamfServer).Submitlamfotp(ctx, req.(*lamf.SubmitotpRequest))
+		return srv.(LamfServer).Submitlamfotp(ctx, req.(*lamf.Request))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Lamf_Getlamfloandetails_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(lamf.GetloandetailsRequest)
+	in := new(lamf.Request)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -148,7 +148,7 @@ func _Lamf_Getlamfloandetails_Handler(srv interface{}, ctx context.Context, dec 
 		FullMethod: "/service.lamf/getlamfloandetails",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(LamfServer).Getlamfloandetails(ctx, req.(*lamf.GetloandetailsRequest))
+		return srv.(LamfServer).Getlamfloandetails(ctx, req.(*lamf.Request))
 	}
 	return interceptor(ctx, in, info, handler)
 }

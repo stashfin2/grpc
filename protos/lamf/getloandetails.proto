@@ -1,13 +1,13 @@
 syntax="proto3";
 package lamf.getloandetails;
 
-message getloandetailsRequest{
+message request{
     int32 customer_id = 1;
     string reqId = 2;
     string clientRefNo = 3;
 }
 
-message getloandetailsResponse{
+message response{
     optional int32 statusCode = 1;
     optional double totatInvestedAmount = 2;
     optional double totalCurrentMarketValue = 3;

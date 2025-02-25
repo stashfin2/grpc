@@ -2,19 +2,19 @@ syntax="proto3";
 
 package stashcash.getschistory;
 
-message getschistoryRequest {
+message request {
   int64 customer_id = 1; 
   string page = 2;
   string limit = 3;
   optional string filter_by = 4;
 }
 
-message getschistoryResponse {
+message response {
   string status = 1;
-  ScHistoryData data = 2;
+  Data data = 2;
 }
 
-message ScHistoryData {
+message Data {
   repeated SCtransaction history = 1;
 }
 

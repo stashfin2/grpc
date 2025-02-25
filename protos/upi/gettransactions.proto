@@ -30,12 +30,12 @@ message Transactions{
   optional int32 mandate_txn_seq_no = 17;
 }
 
-message TransactionsData {
+message Data {
     repeated Transactions transactions = 1;
     optional int32 count = 2;
 }
 message getTransactionsResponse{
     string status  = 1;
     string message = 2;
-    optional TransactionsData data = 3;
+    optional Data data = 3;
 }

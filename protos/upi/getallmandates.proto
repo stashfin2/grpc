@@ -9,7 +9,7 @@ message getAllMandatesRequest{
 message getAllMandatesResponse{
     string status = 1;
     string message = 2;
-    MandatesCollection data = 3;
+    Data data = 3;
 }
 
 message MandateData {
@@ -26,6 +26,6 @@ message MandateData {
     optional string expiry_date = 11;
 }
 
-message MandatesCollection {
+message Data { 
     repeated MandateData mandates = 1;
 }

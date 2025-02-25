@@ -15,12 +15,12 @@ message MandateTxnDetails{
     string status = 9;
 }
 
-message MandateHistoryData{
+message Data{
     repeated MandateTxnDetails mandateTxnDetails  = 1;
 }
 
 message getMandateHistoryResponse{
     string status  = 1;
     string message = 2;
-    optional MandateHistoryData data = 3;
+    optional Data data = 3;
 }
