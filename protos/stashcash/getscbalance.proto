@@ -2,11 +2,11 @@ syntax="proto3";
 
 package stashcash.getscbalance;
 
-message request {
+message getscbalanceRequest {
    int64 customer_id = 1;
 }
 
-message response {
+message getscbalanceResponse {
    string status = 1;
    message Data {
     float locked = 1; 

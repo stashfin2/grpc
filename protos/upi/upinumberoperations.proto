@@ -11,7 +11,7 @@ message upiNumberOperationsRequest{
     string user_consent = 7;
 }
 
-message Data {
+message upiNumberOperationsData {
    string upi_number = 1;
    optional string upi_number_status= 2;
 
@@ -19,5 +19,5 @@ message Data {
 message upiNumberOperationsResponse{
     string status = 1;
     string message = 2;
-    optional Data data = 3;
+    optional upiNumberOperationsData data = 3;
 }

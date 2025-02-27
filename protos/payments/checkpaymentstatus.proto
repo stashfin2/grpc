@@ -1,13 +1,13 @@
 syntax="proto3";
 package payments.checkpaymentstatus;
 
-message request{
+message checkpaymentstatusRequest{
     int64 customer_id = 1;
     string client_id = 2;
     string external_order_id = 3;
 }
 
-message response{
+message checkpaymentstatusResponse{
     string status = 1;
     int32 status_code = 2;
     message Data {

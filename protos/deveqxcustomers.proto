@@ -1,0 +1,30 @@
+syntax = "proto3";
+package service;
+
+import "eqxcustomers/sendotp.proto";
+import "eqxcustomers/verifyotp.proto";
+import "eqxcustomers/getcustomerbyid.proto";
+import "eqxcustomers/getdashboard.proto";
+import "eqxcustomers/getdashboardmaincard.proto";
+import "eqxcustomers/updatepushid.proto";
+import "eqxcustomers/getnotifications.proto";
+import "eqxcustomers/updatenotification.proto";
+import "eqxcustomers/verifytoken.proto";
+import "eqxcustomers/gettokens.proto";
+import "eqxcustomers/getcustomerbymobile.proto";
+
+
+
+service deveqxcustomers {
+  rpc sendOtp(.eqxcustomers.sendotp.sendOtpRequest) returns (.eqxcustomers.sendotp.sendOtpResponse) {} 
+  rpc verifyOtp(.eqxcustomers.verifyotp.verifyOtpReqeust) returns (.eqxcustomers.verifyotp.verifyOtpResponse) {} 
+  rpc getUserById(.eqxcustomers.getcustomerbyid.getCustomerByIdRequest) returns (.eqxcustomers.getcustomerbyid.getCustomerByIdResponse) {}
+  rpc getDashboard(.eqxcustomers.getdashboard.getDashboardRequest) returns (.eqxcustomers.getdashboard.getDashboardResponse) {} 
+  rpc getDashboardMainCard(.eqxcustomers.getdashboardmaincard.getDashboardMainCardRequest) returns (.eqxcustomers.getdashboardmaincard.getDashboardMainCardResponse){}  
+  rpc updatePushId(.eqxcustomers.updatePushId.updatePushIdRequest) returns (.eqxcustomers.updatePushId.updatePushIdResponse){}
+  rpc getnotifications(.eqxcustomers.getnotifications.getNotificationsRequest) returns (.eqxcustomers.getnotifications.getNotificationsResponse){}
+  rpc updateNotifications(.eqxcustomers.updatenotification.updateNotificationRequest) returns (.eqxcustomers.updatenotification.updateNotificationResponse){}
+  rpc VerifyToken(.eqxcustomers.verifytoken.VerifyTokenRequest) returns (.eqxcustomers.verifytoken.VerifyTokenResponse){}
+  rpc getTokens(.eqxcustomers.gettokens.getTokensRequest) returns (.eqxcustomers.gettokens.getTokensResponse){}
+  rpc getCustomerByMobile(.eqxcustomers.getcustomerbymobile.getCustomerByMobileRequest) returns (.eqxcustomers.getcustomerbymobile.getCustomerByMobileResponse){}
+}
