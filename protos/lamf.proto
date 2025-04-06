@@ -6,7 +6,7 @@ import "lamf/submitotp.proto";
 import "lamf/getloandetails.proto";
 
 service lamf{
-    rpc validatelamfuser(.lamf.validateuser.request) returns (.lamf.validateuser.response) {}
-    rpc submitlamfotp(.lamf.submitotp.request) returns (.lamf.submitotp.response) {}
-    rpc getlamfloandetails(.lamf.getloandetails.request) returns (.lamf.getloandetails.response) {}
+    rpc validatelamfuser(.lamf.validateuser.validateUserRequest) returns (.lamf.validateuser.validateUserResponse) {}
+    rpc submitlamfotp(.lamf.submitotp.submitOtpRequest) returns (.lamf.submitotp.submitOtpResponse) {}
+    rpc getlamfloandetails(.lamf.getloandetails.getLoanDetailsRequest) returns (.lamf.getloandetails.getLoanDetailsResponse) {}
 }

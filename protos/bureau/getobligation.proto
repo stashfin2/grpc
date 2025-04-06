@@ -8,10 +8,10 @@ message obligationRequest {
 
 message obligationResponse {
     string status = 1;
-    optional Data data = 2;
+    optional ObligationData data = 2;
 }
 
-message Data {
+message ObligationData {
     int32 max_allowed_dbr = 1;
     int32 active_loans_obligation = 2;
     int32 monthly_obligations = 3;

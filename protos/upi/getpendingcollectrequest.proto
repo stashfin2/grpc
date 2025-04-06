@@ -26,12 +26,12 @@ message CollectRequest {
   optional string payeeType = 17;
 } 
 
-message Data{
+message PendingCollectionData{
     repeated CollectRequest requests = 1;
 }
 
 message pendingCollectResponse{
     string status = 1;
     string message = 2;
-    optional Data data = 3;
+    optional PendingCollectionData data = 3;
 }

@@ -31,11 +31,11 @@ const (
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type StashcashClient interface {
-	Getscbalance(ctx context.Context, in *stashcash.Request, opts ...grpc.CallOption) (*stashcash.Response, error)
-	Creditsc(ctx context.Context, in *stashcash.Request, opts ...grpc.CallOption) (*stashcash.Response, error)
-	Reversesc(ctx context.Context, in *stashcash.Request, opts ...grpc.CallOption) (*stashcash.Response, error)
-	Getschistory(ctx context.Context, in *stashcash.Request, opts ...grpc.CallOption) (*stashcash.Response, error)
-	Debitsc(ctx context.Context, in *stashcash.Request, opts ...grpc.CallOption) (*stashcash.Response, error)
+	Getscbalance(ctx context.Context, in *stashcash.GetScBalanceRequest, opts ...grpc.CallOption) (*stashcash.GetScBalanceResponse, error)
+	Creditsc(ctx context.Context, in *stashcash.CreditScRequest, opts ...grpc.CallOption) (*stashcash.CreditScResponse, error)
+	Reversesc(ctx context.Context, in *stashcash.ReverseScRequest, opts ...grpc.CallOption) (*stashcash.ReverseScResponse, error)
+	Getschistory(ctx context.Context, in *stashcash.GetScHistoryRequest, opts ...grpc.CallOption) (*stashcash.GetScHistoryResponse, error)
+	Debitsc(ctx context.Context, in *stashcash.DebitScRequest, opts ...grpc.CallOption) (*stashcash.DebitScResponse, error)
 }
 
 type stashcashClient struct {
@@ -46,8 +46,8 @@ func NewStashcashClient(cc grpc.ClientConnInterface) StashcashClient {
 	return &stashcashClient{cc}
 }
 
-func (c *stashcashClient) Getscbalance(ctx context.Context, in *stashcash.Request, opts ...grpc.CallOption) (*stashcash.Response, error) {
-	out := new(stashcash.Response)
+func (c *stashcashClient) Getscbalance(ctx context.Context, in *stashcash.GetScBalanceRequest, opts ...grpc.CallOption) (*stashcash.GetScBalanceResponse, error) {
+	out := new(stashcash.GetScBalanceResponse)
 	err := c.cc.Invoke(ctx, Stashcash_Getscbalance_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -55,8 +55,8 @@ func (c *stashcashClient) Getscbalance(ctx context.Context, in *stashcash.Reques
 	return out, nil
 }
 
-func (c *stashcashClient) Creditsc(ctx context.Context, in *stashcash.Request, opts ...grpc.CallOption) (*stashcash.Response, error) {
-	out := new(stashcash.Response)
+func (c *stashcashClient) Creditsc(ctx context.Context, in *stashcash.CreditScRequest, opts ...grpc.CallOption) (*stashcash.CreditScResponse, error) {
+	out := new(stashcash.CreditScResponse)
 	err := c.cc.Invoke(ctx, Stashcash_Creditsc_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -64,8 +64,8 @@ func (c *stashcashClient) Creditsc(ctx context.Context, in *stashcash.Request, o
 	return out, nil
 }
 
-func (c *stashcashClient) Reversesc(ctx context.Context, in *stashcash.Request, opts ...grpc.CallOption) (*stashcash.Response, error) {
-	out := new(stashcash.Response)
+func (c *stashcashClient) Reversesc(ctx context.Context, in *stashcash.ReverseScRequest, opts ...grpc.CallOption) (*stashcash.ReverseScResponse, error) {
+	out := new(stashcash.ReverseScResponse)
 	err := c.cc.Invoke(ctx, Stashcash_Reversesc_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -73,8 +73,8 @@ func (c *stashcashClient) Reversesc(ctx context.Context, in *stashcash.Request, 
 	return out, nil
 }
 
-func (c *stashcashClient) Getschistory(ctx context.Context, in *stashcash.Request, opts ...grpc.CallOption) (*stashcash.Response, error) {
-	out := new(stashcash.Response)
+func (c *stashcashClient) Getschistory(ctx context.Context, in *stashcash.GetScHistoryRequest, opts ...grpc.CallOption) (*stashcash.GetScHistoryResponse, error) {
+	out := new(stashcash.GetScHistoryResponse)
 	err := c.cc.Invoke(ctx, Stashcash_Getschistory_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -82,8 +82,8 @@ func (c *stashcashClient) Getschistory(ctx context.Context, in *stashcash.Reques
 	return out, nil
 }
 
-func (c *stashcashClient) Debitsc(ctx context.Context, in *stashcash.Request, opts ...grpc.CallOption) (*stashcash.Response, error) {
-	out := new(stashcash.Response)
+func (c *stashcashClient) Debitsc(ctx context.Context, in *stashcash.DebitScRequest, opts ...grpc.CallOption) (*stashcash.DebitScResponse, error) {
+	out := new(stashcash.DebitScResponse)
 	err := c.cc.Invoke(ctx, Stashcash_Debitsc_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -95,11 +95,11 @@ func (c *stashcashClient) Debitsc(ctx context.Context, in *stashcash.Request, op
 // All implementations must embed UnimplementedStashcashServer
 // for forward compatibility
 type StashcashServer interface {
-	Getscbalance(context.Context, *stashcash.Request) (*stashcash.Response, error)
-	Creditsc(context.Context, *stashcash.Request) (*stashcash.Response, error)
-	Reversesc(context.Context, *stashcash.Request) (*stashcash.Response, error)
-	Getschistory(context.Context, *stashcash.Request) (*stashcash.Response, error)
-	Debitsc(context.Context, *stashcash.Request) (*stashcash.Response, error)
+	Getscbalance(context.Context, *stashcash.GetScBalanceRequest) (*stashcash.GetScBalanceResponse, error)
+	Creditsc(context.Context, *stashcash.CreditScRequest) (*stashcash.CreditScResponse, error)
+	Reversesc(context.Context, *stashcash.ReverseScRequest) (*stashcash.ReverseScResponse, error)
+	Getschistory(context.Context, *stashcash.GetScHistoryRequest) (*stashcash.GetScHistoryResponse, error)
+	Debitsc(context.Context, *stashcash.DebitScRequest) (*stashcash.DebitScResponse, error)
 	mustEmbedUnimplementedStashcashServer()
 }
 
@@ -107,19 +107,19 @@ type StashcashServer interface {
 type UnimplementedStashcashServer struct {
 }
 
-func (UnimplementedStashcashServer) Getscbalance(context.Context, *stashcash.Request) (*stashcash.Response, error) {
+func (UnimplementedStashcashServer) Getscbalance(context.Context, *stashcash.GetScBalanceRequest) (*stashcash.GetScBalanceResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Getscbalance not implemented")
 }
-func (UnimplementedStashcashServer) Creditsc(context.Context, *stashcash.Request) (*stashcash.Response, error) {
+func (UnimplementedStashcashServer) Creditsc(context.Context, *stashcash.CreditScRequest) (*stashcash.CreditScResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Creditsc not implemented")
 }
-func (UnimplementedStashcashServer) Reversesc(context.Context, *stashcash.Request) (*stashcash.Response, error) {
+func (UnimplementedStashcashServer) Reversesc(context.Context, *stashcash.ReverseScRequest) (*stashcash.ReverseScResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Reversesc not implemented")
 }
-func (UnimplementedStashcashServer) Getschistory(context.Context, *stashcash.Request) (*stashcash.Response, error) {
+func (UnimplementedStashcashServer) Getschistory(context.Context, *stashcash.GetScHistoryRequest) (*stashcash.GetScHistoryResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Getschistory not implemented")
 }
-func (UnimplementedStashcashServer) Debitsc(context.Context, *stashcash.Request) (*stashcash.Response, error) {
+func (UnimplementedStashcashServer) Debitsc(context.Context, *stashcash.DebitScRequest) (*stashcash.DebitScResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Debitsc not implemented")
 }
 func (UnimplementedStashcashServer) mustEmbedUnimplementedStashcashServer() {}
@@ -136,7 +136,7 @@ func RegisterStashcashServer(s grpc.ServiceRegistrar, srv StashcashServer) {
 }
 
 func _Stashcash_Getscbalance_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(stashcash.Request)
+	in := new(stashcash.GetScBalanceRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -148,13 +148,13 @@ func _Stashcash_Getscbalance_Handler(srv interface{}, ctx context.Context, dec f
 		FullMethod: Stashcash_Getscbalance_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(StashcashServer).Getscbalance(ctx, req.(*stashcash.Request))
+		return srv.(StashcashServer).Getscbalance(ctx, req.(*stashcash.GetScBalanceRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Stashcash_Creditsc_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(stashcash.Request)
+	in := new(stashcash.CreditScRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -166,13 +166,13 @@ func _Stashcash_Creditsc_Handler(srv interface{}, ctx context.Context, dec func(
 		FullMethod: Stashcash_Creditsc_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(StashcashServer).Creditsc(ctx, req.(*stashcash.Request))
+		return srv.(StashcashServer).Creditsc(ctx, req.(*stashcash.CreditScRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Stashcash_Reversesc_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(stashcash.Request)
+	in := new(stashcash.ReverseScRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -184,13 +184,13 @@ func _Stashcash_Reversesc_Handler(srv interface{}, ctx context.Context, dec func
 		FullMethod: Stashcash_Reversesc_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(StashcashServer).Reversesc(ctx, req.(*stashcash.Request))
+		return srv.(StashcashServer).Reversesc(ctx, req.(*stashcash.ReverseScRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Stashcash_Getschistory_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(stashcash.Request)
+	in := new(stashcash.GetScHistoryRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -202,13 +202,13 @@ func _Stashcash_Getschistory_Handler(srv interface{}, ctx context.Context, dec f
 		FullMethod: Stashcash_Getschistory_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(StashcashServer).Getschistory(ctx, req.(*stashcash.Request))
+		return srv.(StashcashServer).Getschistory(ctx, req.(*stashcash.GetScHistoryRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _Stashcash_Debitsc_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(stashcash.Request)
+	in := new(stashcash.DebitScRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -220,7 +220,7 @@ func _Stashcash_Debitsc_Handler(srv interface{}, ctx context.Context, dec func(i
 		FullMethod: Stashcash_Debitsc_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(StashcashServer).Debitsc(ctx, req.(*stashcash.Request))
+		return srv.(StashcashServer).Debitsc(ctx, req.(*stashcash.DebitScRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }

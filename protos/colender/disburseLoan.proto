@@ -24,6 +24,6 @@ message disburalResponse {
   int32 colender_disbursal_amount = 3;
   string disbursal_date = 4;
   string disbursal_mode = 5;
-  int32 colender_percentage = 6;
+  int32 colestatusnder_percentage = 6;
   int32 colender_approval_amount = 7;
 }

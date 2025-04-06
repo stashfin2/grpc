@@ -61,11 +61,11 @@ message getCustomerByIdResponse {
     optional float longitude = 53;
     optional string marital_status = 54;
     optional string occupation = 55;
-    optional Address office_addr = 56;
+    optional CustomerAddress office_addr = 56;
     optional string organization = 57;
     optional string pan_url = 58;
-    optional Address per_addr = 59;
-    optional Address res_addr = 60;
+    optional CustomerAddress per_addr = 59;
+    optional CustomerAddress res_addr = 60;
     optional float salary = 61;
     optional string salary_date = 62;
     optional string salary_mode = 63;
@@ -101,7 +101,7 @@ message getCustomerByIdResponse {
     string created_at = 93;
 }
 
-message Address {
+message CustomerAddress {
   optional string house_flat_no = 1; 
   optional string address_line_1 = 2; 
   optional string address_line_2 = 3;

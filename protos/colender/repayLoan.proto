@@ -16,14 +16,14 @@ message repayRequest {
 message repayResponse {
   int32 colender_id = 1;
   optional string query = 2;
-  status actionStatus = 3;
+  RepayActionStatus actionStatus = 3;
   repeated string installmentQuery = 4;
   repeated string paymentsQuery = 5;
   optional string forecloseQuery = 6;
   optional string closeLoanQuery = 7;
 }
 
-message status {
+message RepayActionStatus {
   string status = 1;
   optional string error = 2;
   string message = 3;

@@ -1,13 +1,13 @@
 syntax="proto3";
 package payments.getpaymentoptions;
 
-message request{
+message getPaymentOptionsRequest{
     int32 customer_id = 1;
     string client_id = 2;
     optional double amount = 3;
 }
 
-message response{
+message getPaymentOptionsResponse{
     string status = 1;
     int32 status_code = 2;
 

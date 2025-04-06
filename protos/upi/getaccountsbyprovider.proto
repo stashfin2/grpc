@@ -33,7 +33,7 @@ message CredsAllowedChildList {
   optional string CredsAllowedDType = 5;
 }
 
-message Account {
+message PaymentAccount {
   optional string mbeba = 1;
   optional string aadhaarNo = 2;
   optional string name = 3;
@@ -53,7 +53,7 @@ message Account {
 
 message MobileAppDataList {
   message Details {
-    repeated Account accounts = 1;
+    repeated PaymentAccount accounts = 1;
   }
 
   optional Details details = 1;

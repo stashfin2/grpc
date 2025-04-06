@@ -9,9 +9,9 @@ import "stashcash/reversesc.proto";
 import "stashcash/debitsc.proto";
 
 service stashcash {
-  rpc getscbalance(.stashcash.getscbalance.request) returns (.stashcash.getscbalance.response) {}
-  rpc creditsc(.stashcash.creditsc.request) returns (.stashcash.creditsc.response) {}
-  rpc reversesc(.stashcash.reversesc.request) returns (.stashcash.reversesc.response) {}
-  rpc getschistory(.stashcash.getschistory.request) returns (.stashcash.getschistory.response) {}
-  rpc debitsc(.stashcash.debitsc.request) returns (.stashcash.debitsc.response) {}
+  rpc getscbalance(.stashcash.getscbalance.getScBalanceRequest) returns (.stashcash.getscbalance.getScBalanceResponse) {}
+  rpc creditsc(.stashcash.creditsc.creditScRequest) returns (.stashcash.creditsc.creditScResponse) {}
+  rpc reversesc(.stashcash.reversesc.reverseScRequest) returns (.stashcash.reversesc.reverseScResponse) {}
+  rpc getschistory(.stashcash.getschistory.getScHistoryRequest) returns (.stashcash.getschistory.getScHistoryResponse) {}
+  rpc debitsc(.stashcash.debitsc.debitScRequest) returns (.stashcash.debitsc.debitScResponse) {}
 }

@@ -34,11 +34,11 @@ message MobileAppData {
 
 // Details nested message
 message Details {
-  repeated Account accounts = 1;
+  repeated FinancialAccount accounts = 1;
 }
 
 // Account nested message
-message Account {
+message FinancialAccount {
   optional string reg_mob_format = 1;
   optional string default_va = 2;
   optional string mmid = 3;

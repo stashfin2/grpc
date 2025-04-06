@@ -1,14 +1,14 @@
 syntax="proto3";
 package payments.nachpresentation;
 
-message request{
+message nachPresentationRequest{
     int64 customer_id = 1;
     float amount = 2;
     string client_id = 3;
     string external_order_id = 4;
 }
 
-message response{
+message nachPresentationResponse{
     string status = 1;
     int32 status_code = 2;
 }

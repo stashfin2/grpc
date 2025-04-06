@@ -17,14 +17,14 @@ message EmploymentData {
     optional string exit_reason = 7;
 }
   
-message Data {
+message EmploymentHistoryData {
     string code = 1;
     string message = 2;
     EmploymentData employment_data = 3;
 }
   
 message fetchEmploymentHistoryResponse {
-    Data data = 1;
+    EmploymentHistoryData data = 1;
     string request_id = 2;
     int32 customer_id= 3;
     string uan= 4;

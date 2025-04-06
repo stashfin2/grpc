@@ -10,12 +10,12 @@ message fetchAadhaarByPanResponse {
     string request_id = 1;
     string transaction_id = 2;
     int32 status = 3;
-    Data data = 4;
+    AadhaarByPanData data = 4;
     uint64 timestamp = 5;
     string path = 6;
 }
 
-message Data {
+message AadhaarByPanData {
     string code = 1;
     string message = 2;
     optional PanData pan_data = 3;

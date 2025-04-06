@@ -2,13 +2,13 @@ syntax="proto3";
 
 package stashcash.reversesc;
 
-message request {
+message reverseScRequest {
   int64 txnid = 1;
   int64 customer_id = 2;
   string sc_type = 3;
 }
 
-message response {
+message reverseScResponse {
    string status = 1;
    message Data {
     float locked = 1;
