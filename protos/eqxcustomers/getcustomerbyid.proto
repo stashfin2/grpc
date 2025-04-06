@@ -3,6 +3,7 @@ syntax="proto3";
 package eqxcustomers.getcustomerbyid;
 
 message getCustomerByIdRequest {  
+    optional int64 customer_id = 1;
 }
  
 message getCustomerByIdResponse {
@@ -15,5 +16,8 @@ message getCustomerByIdResponse {
     optional string last_name = 7;
     optional string email = 8;
     optional string token = 9;
-    optional string refferal_code = 10;  
+    optional string refferal_code = 10;
+    optional string pan_number = 11;
+    optional string pin_code = 12;
+    optional string dob = 13;
 }
