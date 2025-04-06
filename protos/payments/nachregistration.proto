@@ -7,7 +7,7 @@ enum MandatePartner {
   DIGIO = 2;
 }
 
-message nachregistrationRequest{
+message request{
     int64 customer_id = 1;
     string client_id = 2;
     string mandate_type = 3;
@@ -20,7 +20,7 @@ message nachregistrationRequest{
     optional MandatePartner gatewayIdentifier = 10;
 }
 
-message nachregistrationResponse{
+message response{
     string status = 1;
     int32 status_code = 2;
     message Data {

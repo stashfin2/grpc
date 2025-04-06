@@ -58,11 +58,11 @@ func (*GetProfessionalInfoRequest) Descriptor() ([]byte, []int) {
 }
 
 type GetProfessionalInfoResponse struct {
-	state         protoimpl.MessageState   `protogen:"open.v1"`
-	CompanyName   string                   `protobuf:"bytes,1,opt,name=company_name,json=companyName,proto3" json:"company_name,omitempty"`
-	Designation   string                   `protobuf:"bytes,2,opt,name=designation,proto3" json:"designation,omitempty"`
-	OfficialEmail string                   `protobuf:"bytes,3,opt,name=official_email,json=officialEmail,proto3" json:"official_email,omitempty"`
-	OfficeAddr    *ProfessionalInfoAddress `protobuf:"bytes,4,opt,name=office_addr,json=officeAddr,proto3" json:"office_addr,omitempty"`
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	CompanyName   string                 `protobuf:"bytes,1,opt,name=company_name,json=companyName,proto3" json:"company_name,omitempty"`
+	Designation   string                 `protobuf:"bytes,2,opt,name=designation,proto3" json:"designation,omitempty"`
+	OfficialEmail string                 `protobuf:"bytes,3,opt,name=official_email,json=officialEmail,proto3" json:"official_email,omitempty"`
+	OfficeAddr    *Address               `protobuf:"bytes,4,opt,name=office_addr,json=officeAddr,proto3" json:"office_addr,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -118,14 +118,14 @@ func (x *GetProfessionalInfoResponse) GetOfficialEmail() string {
 	return ""
 }
 
-func (x *GetProfessionalInfoResponse) GetOfficeAddr() *ProfessionalInfoAddress {
+func (x *GetProfessionalInfoResponse) GetOfficeAddr() *Address {
 	if x != nil {
 		return x.OfficeAddr
 	}
 	return nil
 }
 
-type ProfessionalInfoAddress struct {
+type Address struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	HouseFlatNo   string                 `protobuf:"bytes,1,opt,name=house_flat_no,json=houseFlatNo,proto3" json:"house_flat_no,omitempty"`
 	AddressLine_1 string                 `protobuf:"bytes,2,opt,name=address_line_1,json=addressLine1,proto3" json:"address_line_1,omitempty"`
@@ -138,20 +138,20 @@ type ProfessionalInfoAddress struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *ProfessionalInfoAddress) Reset() {
-	*x = ProfessionalInfoAddress{}
+func (x *Address) Reset() {
+	*x = Address{}
 	mi := &file_customers_getprofessionalinfo_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *ProfessionalInfoAddress) String() string {
+func (x *Address) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ProfessionalInfoAddress) ProtoMessage() {}
+func (*Address) ProtoMessage() {}
 
-func (x *ProfessionalInfoAddress) ProtoReflect() protoreflect.Message {
+func (x *Address) ProtoReflect() protoreflect.Message {
 	mi := &file_customers_getprofessionalinfo_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -163,54 +163,54 @@ func (x *ProfessionalInfoAddress) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ProfessionalInfoAddress.ProtoReflect.Descriptor instead.
-func (*ProfessionalInfoAddress) Descriptor() ([]byte, []int) {
+// Deprecated: Use Address.ProtoReflect.Descriptor instead.
+func (*Address) Descriptor() ([]byte, []int) {
 	return file_customers_getprofessionalinfo_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *ProfessionalInfoAddress) GetHouseFlatNo() string {
+func (x *Address) GetHouseFlatNo() string {
 	if x != nil {
 		return x.HouseFlatNo
 	}
 	return ""
 }
 
-func (x *ProfessionalInfoAddress) GetAddressLine_1() string {
+func (x *Address) GetAddressLine_1() string {
 	if x != nil {
 		return x.AddressLine_1
 	}
 	return ""
 }
 
-func (x *ProfessionalInfoAddress) GetAddressLine_2() string {
+func (x *Address) GetAddressLine_2() string {
 	if x != nil {
 		return x.AddressLine_2
 	}
 	return ""
 }
 
-func (x *ProfessionalInfoAddress) GetLandmark() string {
+func (x *Address) GetLandmark() string {
 	if x != nil {
 		return x.Landmark
 	}
 	return ""
 }
 
-func (x *ProfessionalInfoAddress) GetCity() string {
+func (x *Address) GetCity() string {
 	if x != nil {
 		return x.City
 	}
 	return ""
 }
 
-func (x *ProfessionalInfoAddress) GetState() string {
+func (x *Address) GetState() string {
 	if x != nil {
 		return x.State
 	}
 	return ""
 }
 
-func (x *ProfessionalInfoAddress) GetPinCode() string {
+func (x *Address) GetPinCode() string {
 	if x != nil {
 		return x.PinCode
 	}
@@ -226,7 +226,7 @@ var file_customers_getprofessionalinfo_proto_rawDesc = string([]byte{
 	0x2e, 0x67, 0x65, 0x74, 0x70, 0x72, 0x6f, 0x66, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x61, 0x6c,
 	0x69, 0x6e, 0x66, 0x6f, 0x22, 0x1c, 0x0a, 0x1a, 0x67, 0x65, 0x74, 0x50, 0x72, 0x6f, 0x66, 0x65,
 	0x73, 0x73, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65, 0x71, 0x75, 0x65,
-	0x73, 0x74, 0x22, 0xe2, 0x01, 0x0a, 0x1b, 0x67, 0x65, 0x74, 0x50, 0x72, 0x6f, 0x66, 0x65, 0x73,
+	0x73, 0x74, 0x22, 0xd2, 0x01, 0x0a, 0x1b, 0x67, 0x65, 0x74, 0x50, 0x72, 0x6f, 0x66, 0x65, 0x73,
 	0x73, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x49, 0x6e, 0x66, 0x6f, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
 	0x73, 0x65, 0x12, 0x21, 0x0a, 0x0c, 0x63, 0x6f, 0x6d, 0x70, 0x61, 0x6e, 0x79, 0x5f, 0x6e, 0x61,
 	0x6d, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x63, 0x6f, 0x6d, 0x70, 0x61, 0x6e,
@@ -234,14 +234,12 @@ var file_customers_getprofessionalinfo_proto_rawDesc = string([]byte{
 	0x74, 0x69, 0x6f, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x64, 0x65, 0x73, 0x69,
 	0x67, 0x6e, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x25, 0x0a, 0x0e, 0x6f, 0x66, 0x66, 0x69, 0x63,
 	0x69, 0x61, 0x6c, 0x5f, 0x65, 0x6d, 0x61, 0x69, 0x6c, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x0d, 0x6f, 0x66, 0x66, 0x69, 0x63, 0x69, 0x61, 0x6c, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x12, 0x57,
+	0x0d, 0x6f, 0x66, 0x66, 0x69, 0x63, 0x69, 0x61, 0x6c, 0x45, 0x6d, 0x61, 0x69, 0x6c, 0x12, 0x47,
 	0x0a, 0x0b, 0x6f, 0x66, 0x66, 0x69, 0x63, 0x65, 0x5f, 0x61, 0x64, 0x64, 0x72, 0x18, 0x04, 0x20,
-	0x01, 0x28, 0x0b, 0x32, 0x36, 0x2e, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x73, 0x2e,
+	0x01, 0x28, 0x0b, 0x32, 0x26, 0x2e, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x73, 0x2e,
 	0x67, 0x65, 0x74, 0x70, 0x72, 0x6f, 0x66, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x69,
-	0x6e, 0x66, 0x6f, 0x2e, 0x70, 0x72, 0x6f, 0x66, 0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x61, 0x6c,
-	0x49, 0x6e, 0x66, 0x6f, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x52, 0x0a, 0x6f, 0x66, 0x66,
-	0x69, 0x63, 0x65, 0x41, 0x64, 0x64, 0x72, 0x22, 0xea, 0x01, 0x0a, 0x17, 0x70, 0x72, 0x6f, 0x66,
-	0x65, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x61, 0x6c, 0x49, 0x6e, 0x66, 0x6f, 0x41, 0x64, 0x64, 0x72,
+	0x6e, 0x66, 0x6f, 0x2e, 0x41, 0x64, 0x64, 0x72, 0x65, 0x73, 0x73, 0x52, 0x0a, 0x6f, 0x66, 0x66,
+	0x69, 0x63, 0x65, 0x41, 0x64, 0x64, 0x72, 0x22, 0xda, 0x01, 0x0a, 0x07, 0x41, 0x64, 0x64, 0x72,
 	0x65, 0x73, 0x73, 0x12, 0x22, 0x0a, 0x0d, 0x68, 0x6f, 0x75, 0x73, 0x65, 0x5f, 0x66, 0x6c, 0x61,
 	0x74, 0x5f, 0x6e, 0x6f, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x68, 0x6f, 0x75, 0x73,
 	0x65, 0x46, 0x6c, 0x61, 0x74, 0x4e, 0x6f, 0x12, 0x24, 0x0a, 0x0e, 0x61, 0x64, 0x64, 0x72, 0x65,
@@ -274,10 +272,10 @@ var file_customers_getprofessionalinfo_proto_msgTypes = make([]protoimpl.Message
 var file_customers_getprofessionalinfo_proto_goTypes = []any{
 	(*GetProfessionalInfoRequest)(nil),  // 0: customers.getprofessionalinfo.getProfessionalInfoRequest
 	(*GetProfessionalInfoResponse)(nil), // 1: customers.getprofessionalinfo.getProfessionalInfoResponse
-	(*ProfessionalInfoAddress)(nil),     // 2: customers.getprofessionalinfo.professionalInfoAddress
+	(*Address)(nil),                     // 2: customers.getprofessionalinfo.Address
 }
 var file_customers_getprofessionalinfo_proto_depIdxs = []int32{
-	2, // 0: customers.getprofessionalinfo.getProfessionalInfoResponse.office_addr:type_name -> customers.getprofessionalinfo.professionalInfoAddress
+	2, // 0: customers.getprofessionalinfo.getProfessionalInfoResponse.office_addr:type_name -> customers.getprofessionalinfo.Address
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name

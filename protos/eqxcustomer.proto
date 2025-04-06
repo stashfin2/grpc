@@ -11,7 +11,6 @@ import "eqxcustomers/getnotifications.proto";
 import "eqxcustomers/updatenotification.proto";
 import "eqxcustomers/verifytoken.proto";
 import "eqxcustomers/gettokens.proto";
-import "eqxcustomers/getcustomerbymobile.proto";
 
 
 
@@ -26,5 +25,4 @@ service eqxcustomers {
   rpc updateNotifications(.eqxcustomers.updatenotification.updateNotificationRequest) returns (.eqxcustomers.updatenotification.updateNotificationResponse){}
   rpc VerifyToken(.eqxcustomers.verifytoken.VerifyTokenRequest) returns (.eqxcustomers.verifytoken.VerifyTokenResponse){}
   rpc getTokens(.eqxcustomers.gettokens.getTokensRequest) returns (.eqxcustomers.gettokens.getTokensResponse){}
-  rpc getCustomerByMobile(.eqxcustomers.getcustomerbymobile.getCustomerByMobileRequest) returns (.eqxcustomers.getcustomerbymobile.getCustomerByMobileResponse){}
 }

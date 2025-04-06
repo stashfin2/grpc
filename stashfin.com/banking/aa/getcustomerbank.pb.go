@@ -68,7 +68,7 @@ func (x *GetCustomerBankRequest) GetCustomerId() int64 {
 type GetCustomerBankResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Status        string                 `protobuf:"bytes,1,opt,name=status,proto3" json:"status,omitempty"`
-	Data          []*CustomerBankData    `protobuf:"bytes,2,rep,name=data,proto3" json:"data,omitempty"`
+	Data          []*BankData            `protobuf:"bytes,2,rep,name=data,proto3" json:"data,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -110,14 +110,14 @@ func (x *GetCustomerBankResponse) GetStatus() string {
 	return ""
 }
 
-func (x *GetCustomerBankResponse) GetData() []*CustomerBankData {
+func (x *GetCustomerBankResponse) GetData() []*BankData {
 	if x != nil {
 		return x.Data
 	}
 	return nil
 }
 
-type CustomerBankData struct {
+type BankData struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	AccountNumber *string                `protobuf:"bytes,1,opt,name=account_number,json=accountNumber,proto3,oneof" json:"account_number,omitempty"`
 	IfscCode      *string                `protobuf:"bytes,2,opt,name=ifsc_code,json=ifscCode,proto3,oneof" json:"ifsc_code,omitempty"`
@@ -128,20 +128,20 @@ type CustomerBankData struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *CustomerBankData) Reset() {
-	*x = CustomerBankData{}
+func (x *BankData) Reset() {
+	*x = BankData{}
 	mi := &file_banking_aa_getcustomerbank_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *CustomerBankData) String() string {
+func (x *BankData) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*CustomerBankData) ProtoMessage() {}
+func (*BankData) ProtoMessage() {}
 
-func (x *CustomerBankData) ProtoReflect() protoreflect.Message {
+func (x *BankData) ProtoReflect() protoreflect.Message {
 	mi := &file_banking_aa_getcustomerbank_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -153,40 +153,40 @@ func (x *CustomerBankData) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use CustomerBankData.ProtoReflect.Descriptor instead.
-func (*CustomerBankData) Descriptor() ([]byte, []int) {
+// Deprecated: Use BankData.ProtoReflect.Descriptor instead.
+func (*BankData) Descriptor() ([]byte, []int) {
 	return file_banking_aa_getcustomerbank_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *CustomerBankData) GetAccountNumber() string {
+func (x *BankData) GetAccountNumber() string {
 	if x != nil && x.AccountNumber != nil {
 		return *x.AccountNumber
 	}
 	return ""
 }
 
-func (x *CustomerBankData) GetIfscCode() string {
+func (x *BankData) GetIfscCode() string {
 	if x != nil && x.IfscCode != nil {
 		return *x.IfscCode
 	}
 	return ""
 }
 
-func (x *CustomerBankData) GetCustomerName() string {
+func (x *BankData) GetCustomerName() string {
 	if x != nil && x.CustomerName != nil {
 		return *x.CustomerName
 	}
 	return ""
 }
 
-func (x *CustomerBankData) GetIsPrimary() bool {
+func (x *BankData) GetIsPrimary() bool {
 	if x != nil && x.IsPrimary != nil {
 		return *x.IsPrimary
 	}
 	return false
 }
 
-func (x *CustomerBankData) GetBankLogoUrl() string {
+func (x *BankData) GetBankLogoUrl() string {
 	if x != nil && x.BankLogoUrl != nil {
 		return *x.BankLogoUrl
 	}
@@ -203,15 +203,14 @@ var file_banking_aa_getcustomerbank_proto_rawDesc = string([]byte{
 	0x0a, 0x16, 0x67, 0x65, 0x74, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x42, 0x61, 0x6e,
 	0x6b, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1f, 0x0a, 0x0b, 0x63, 0x75, 0x73, 0x74,
 	0x6f, 0x6d, 0x65, 0x72, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x0a, 0x63,
-	0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x49, 0x64, 0x22, 0x73, 0x0a, 0x17, 0x67, 0x65, 0x74,
+	0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x49, 0x64, 0x22, 0x6b, 0x0a, 0x17, 0x67, 0x65, 0x74,
 	0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x42, 0x61, 0x6e, 0x6b, 0x52, 0x65, 0x73, 0x70,
 	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x16, 0x0a, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x01,
-	0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x40, 0x0a, 0x04,
-	0x64, 0x61, 0x74, 0x61, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x2c, 0x2e, 0x62, 0x61, 0x6e,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x12, 0x38, 0x0a, 0x04,
+	0x64, 0x61, 0x74, 0x61, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x24, 0x2e, 0x62, 0x61, 0x6e,
 	0x6b, 0x69, 0x6e, 0x67, 0x2e, 0x61, 0x61, 0x2e, 0x67, 0x65, 0x74, 0x63, 0x75, 0x73, 0x74, 0x6f,
-	0x6d, 0x65, 0x72, 0x62, 0x61, 0x6e, 0x6b, 0x2e, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72,
-	0x42, 0x61, 0x6e, 0x6b, 0x44, 0x61, 0x74, 0x61, 0x52, 0x04, 0x64, 0x61, 0x74, 0x61, 0x22, 0xab,
-	0x02, 0x0a, 0x10, 0x63, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x42, 0x61, 0x6e, 0x6b, 0x44,
+	0x6d, 0x65, 0x72, 0x62, 0x61, 0x6e, 0x6b, 0x2e, 0x42, 0x61, 0x6e, 0x6b, 0x44, 0x61, 0x74, 0x61,
+	0x52, 0x04, 0x64, 0x61, 0x74, 0x61, 0x22, 0xa3, 0x02, 0x0a, 0x08, 0x42, 0x61, 0x6e, 0x6b, 0x44,
 	0x61, 0x74, 0x61, 0x12, 0x2a, 0x0a, 0x0e, 0x61, 0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x5f, 0x6e,
 	0x75, 0x6d, 0x62, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x48, 0x00, 0x52, 0x0d, 0x61,
 	0x63, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x4e, 0x75, 0x6d, 0x62, 0x65, 0x72, 0x88, 0x01, 0x01, 0x12,
@@ -249,10 +248,10 @@ var file_banking_aa_getcustomerbank_proto_msgTypes = make([]protoimpl.MessageInf
 var file_banking_aa_getcustomerbank_proto_goTypes = []any{
 	(*GetCustomerBankRequest)(nil),  // 0: banking.aa.getcustomerbank.getCustomerBankRequest
 	(*GetCustomerBankResponse)(nil), // 1: banking.aa.getcustomerbank.getCustomerBankResponse
-	(*CustomerBankData)(nil),        // 2: banking.aa.getcustomerbank.customerBankData
+	(*BankData)(nil),                // 2: banking.aa.getcustomerbank.BankData
 }
 var file_banking_aa_getcustomerbank_proto_depIdxs = []int32{
-	2, // 0: banking.aa.getcustomerbank.getCustomerBankResponse.data:type_name -> banking.aa.getcustomerbank.customerBankData
+	2, // 0: banking.aa.getcustomerbank.getCustomerBankResponse.data:type_name -> banking.aa.getcustomerbank.BankData
 	1, // [1:1] is the sub-list for method output_type
 	1, // [1:1] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name

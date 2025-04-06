@@ -1,7 +1,7 @@
 syntax="proto3";
 package lamf.validateuser;
 
-message validateuserRequest{
+message request{
   int32 customer_id = 1;
   optional int32 reqId = 2;
   optional string clientRefNo = 3;
@@ -11,7 +11,7 @@ message validateuserRequest{
   optional int32 retryCount = 7;
 }
 
-message validateuserResponse{
+message response{
     message Errors {
         optional int32 code = 1;
         optional string message =2;

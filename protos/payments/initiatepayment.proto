@@ -1,7 +1,7 @@
 syntax="proto3";
 package payments.initiatepayment;
 
-message initiatepaymentRequest{
+message request{
     int64 customer_id = 1;
     string client_id = 2;
     string mode = 3;
@@ -10,7 +10,7 @@ message initiatepaymentRequest{
     optional string meta_data = 6;
 }
 
-message initiatepaymentResponse{
+message response{
     string status = 1;
     int32 status_code = 2;
     message Data {

@@ -12,10 +12,10 @@ message detailsRequest {
 
 message detailsResponse {
     string status = 1;
-    optional basicdetailsReport data = 2;
+    optional Report data = 2;
 }
 
-message basicdetailsReport {
+message Report {
   int32 score = 1;
   string name = 2;
   string occupation = 3;

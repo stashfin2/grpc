@@ -9,10 +9,10 @@ message getMandatesDetailsRequest{
 message getMandateDetailsReponse{
     string status = 1;
     string message = 2;
-    optional payeeMetaData data = 3;
+    optional Data data = 3;
 }
 
-message payeeMetaData {
+message Data {
   optional PayeeDetails payee_details = 1;
   optional PayerDetails payer_details = 2;
   optional MandateDetails mandate_details = 3;
