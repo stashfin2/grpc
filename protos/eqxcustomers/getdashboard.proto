@@ -3,6 +3,7 @@ syntax = "proto3";
 package eqxcustomers.getdashboard;
 
 message getDashboardRequest {
+  string product_page=1;
 }
 
 message getDashboardResponse {
@@ -17,10 +18,11 @@ message Block_groups {
 
 message Block{
   string block_name = 1;
-  optional int32 seq_no = 2;
+  optional int32 block_sequence = 2;
   repeated Items items = 3;
   optional string block_type = 4;
   optional string block_title = 5;
+  optional int32 block_card_size =6;
 }
 
 message Items {
@@ -28,24 +30,11 @@ message Items {
   optional string sub_text = 2;
   optional string image_url = 3;
   optional string video_url = 4;
-  optional int32 video_length = 5;
-  optional string action_url = 6;
-  optional string landing_page = 7;
-  optional string api_mode = 8;
-  optional string app_version = 9;
-  optional bool old_customers = 10;
-  optional bool is_new = 11;
-  optional string action_type = 12;
-  optional string color1 = 13;
-  optional string color2 = 14;
-  optional string image_trailing = 15;
-  optional Tag tag = 16;
-  optional string overlay_image = 17;
-  optional string title = 18;
-}
-
-message Tag {
-  string text = 1;
-  string bg_color = 2;
-  string text_color = 3;
+  optional string action_url = 5;
+  optional string app_version = 6;
+  optional string badge = 7;
+  optional string action_type = 8;
+  optional string items_metadata = 9;
+  optional int32 item_sequence=10;
+  optional string rules=11;
 }
