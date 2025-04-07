@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package service;
+
+import "magneto/notifyinsurancepayment.proto";
+
+service magneto {
+  rpc notifyInsurancePayment(.magneto.notifyinsurancepayment.notifyInsurancePaymentRequest) returns (.magneto.notifyinsurancepayment.notifyInsurancePaymentResponse) {}
+  
+}
